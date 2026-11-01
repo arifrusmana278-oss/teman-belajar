@@ -121,7 +121,7 @@ function subjectLogo(name) {
 async function request(path, options={}) {
   const headers = { 'Content-Type':'application/json', ...(options.headers || {}) }
   if (authToken.value) headers.Authorization = `Bearer ${authToken.value}`
-  const curriculumCacheable = /^\/(subjects(?:\/\d+\/lessons)?|lessons\/\d+(?:\/questions)?)$/.test(path)
+  const curriculumCacheable = /^\/(subjects(?:\/\d+\/lessons)?(?:\?grade=[1-6])?|lessons\/\d+(?:\/questions)?)$/.test(path)
   const progressCacheable = /^\/progress(?:\?.*)?$/.test(path) && account.value?.role === 'STUDENT'
   const cacheable = (!options.method || options.method === 'GET') && (curriculumCacheable || progressCacheable)
   const cacheKey = `tb-curriculum:${account.value?.id || 'public'}:grade-${selectedGrade.value}:${path}`
@@ -261,7 +261,7 @@ async function submitAuth() {
     localStorage.setItem('tb_cached_account', JSON.stringify(session.user))
     restoreExtracurricularState(); syncExtracurricularState()
     studentName.value = session.user.name
-    selectedGrade.value = session.user.grade
+    selectedGrade.value = viewGradeFor(session.user)
     gradeForm.value = String(session.user.grade)
     localStorage.setItem('tb_student_name', studentName.value)
     localStorage.setItem('tb_selected_grade', selectedGrade.value)
@@ -270,6 +270,10 @@ async function submitAuth() {
   } catch (e) { authError.value = e.message }
   finally { authBusy.value = false }
 }
+function viewGradeFor(user) {
+  const saved = user.role === 'ADMIN' ? localStorage.getItem('tb_admin_view_grade') : null
+  return /^[1-6]$/.test(saved || '') ? saved : user.grade
+}
 async function bootstrapAuth() {
   if (!authToken.value) { authReady.value = true; return }
   try {
@@ -277,7 +281,7 @@ async function bootstrapAuth() {
     localStorage.setItem('tb_cached_account', JSON.stringify(account.value))
     restoreExtracurricularState(); syncExtracurricularState()
     studentName.value = account.value.name
-    selectedGrade.value = account.value.grade
+    selectedGrade.value = viewGradeFor(account.value)
     gradeForm.value = String(account.value.grade)
     authReady.value = true
     await loadAll()
@@ -375,7 +379,7 @@ async function deleteStudent() {
 }
 async function loadAll() {
   loading.value = true; error.value = ''
-  try { subjects.value = await request('/subjects'); await loadProgress() }
+  try { subjects.value = await request(`/subjects${adminGradeQuery()}`); await loadProgress() }
   catch (e) {
     if (/\b401\b/.test(e.message)) {
       authToken.value = ''; account.value = null
@@ -386,6 +390,13 @@ async function loadAll() {
   finally { loading.value = false }
 }
 async function loadProgress() { try { const p = await request(`/progress?studentName=${encodeURIComponent(studentName.value)}`); history.value = p.history || [] } catch { history.value = [] } }
+function adminGradeQuery() { return account.value?.role === 'ADMIN' ? `?grade=${selectedGrade.value}` : '' }
+async function changeAdminGrade(grade) {
+  selectedGrade.value = grade
+  localStorage.setItem('tb_admin_view_grade', grade)
+  selectedSubject.value = null; activeLesson.value = null; lessons.value = []; allSubjectLessons.value = []
+  await loadAll()
+}
 async function saveGrade() {
   if (!account.value || account.value.role === 'ADMIN' || gradeSaving.value || String(gradeForm.value) === String(account.value.grade)) return
   gradeSaving.value = true; gradeMessage.value = ''; gradeError.value = ''
@@ -400,7 +411,7 @@ async function saveGrade() {
   } catch (e) { gradeError.value = e.message; gradeForm.value = String(account.value.grade) }
   finally { gradeSaving.value = false }
 }
-async function openSubject(subject) { selectedNav.value = 'subjects'; extracurricularView.value = false; selectedSubject.value = subject; activeLesson.value = null; lessons.value = []; try { allSubjectLessons.value = await request(`/subjects/${subject.id}/lessons`); lessons.value = allSubjectLessons.value } catch(e) { error.value = e.message } }
+async function openSubject(subject) { selectedNav.value = 'subjects'; extracurricularView.value = false; selectedSubject.value = subject; activeLesson.value = null; lessons.value = []; try { allSubjectLessons.value = await request(`/subjects/${subject.id}/lessons${adminGradeQuery()}`); lessons.value = allSubjectLessons.value } catch(e) { error.value = e.message } }
 async function openLesson(lesson, questionLimit = 10) {
   activeLesson.value = lesson; questions.value = []; answers.value = []; questionIndex.value = 0; selectedOption.value = null; feedback.value = null; score.value = 0; finished.value = false; reviewMode.value = false
   hintVisible.value = false; speechPlaying.value = false; window.speechSynthesis?.cancel()
@@ -438,7 +449,9 @@ function goToQuestion(index) {
 }
 async function finishQuiz() {
   if (answers.value.some(answer => !answer)) return
-  finished.value = true; saving.value = true; reviewMode.value = false
+  finished.value = true; reviewMode.value = false
+  if (account.value?.role === 'ADMIN') return
+  saving.value = true
   try { await request('/progress', { method:'POST', body:JSON.stringify({studentName:studentName.value.trim() || 'Adik', lessonId:activeLesson.value.id, score:score.value, total:questions.value.length}) }); await loadProgress() }
   catch(e) { error.value = `Nilai tampil, tetapi belum tersimpan: ${e.message}` }
   finally { saving.value = false }
@@ -618,9 +631,10 @@ onUnmounted(() => { window.clearInterval(philosophyTimer); window.removeEventLis
             <div class="hero-copy"><div class="eyebrow"><span class="sun-dot"></span> HARI INI ADALAH KESEMPATAN BARU</div><h1>{{ greeting }},<br><span>{{ studentName }}!</span> 👋</h1><p>Yuk, belajar hal baru hari ini. Sedikit demi sedikit, kamu pasti bisa!</p><button class="hero-btn" @click="scrollToId('subjects')">Mulai belajar <span>→</span></button><button v-if="account?.role!=='ADMIN'" class="donate-hero-btn" @click="openDonation">♡ Donasi</button><div class="hero-note">✦ Belajar seru · Tumbuh setiap hari</div></div>
             <div class="hero-art"><div class="art-sun"></div><div class="art-book">📚</div><div class="art-pencil">✏️</div><div class="art-star star-a">✦</div><div class="art-star star-b">✧</div><div class="art-cloud">☁️</div><div class="art-caption">Kamu pasti bisa!</div></div>
           </section>
+          <section v-if="account?.role==='ADMIN'" class="grade-settings-card"><div><div class="eyebrow">TAMPILAN ADMIN</div><h2>Lihat materi per kelas</h2><p>Pilihan ini hanya mengubah tampilan admin. Latihan yang dikerjakan admin tidak disimpan sebagai progres.</p></div><form class="grade-settings-form" @submit.prevent><label for="admin-grade">Kelas</label><select id="admin-grade" :value="String(selectedGrade)" @change="changeAdminGrade($event.target.value)"><option v-for="grade in 6" :key="grade" :value="String(grade)">Kelas {{ grade }}</option></select></form></section>
           <section v-if="account?.role!=='ADMIN'" class="grade-settings-card"><div><div class="eyebrow">PENGATURAN BELAJAR</div><h2>Sudah naik kelas?</h2><p>Perbarui kelas untuk melihat materi dan mata pelajaran yang sesuai.</p><small v-if="gradeMessage" class="grade-feedback">{{ gradeMessage }}</small><small v-if="gradeError" class="grade-error">{{ gradeError }}</small></div><form class="grade-settings-form" @submit.prevent="saveGrade"><label for="student-grade">Kelas belajar</label><select id="student-grade" v-model="gradeForm"><option v-for="grade in 6" :key="grade" :value="String(grade)">Kelas {{ grade }}</option></select><button class="primary-btn" type="submit" :disabled="gradeSaving || String(gradeForm)===String(account.grade)">{{ gradeSaving ? 'Menyimpan...' : 'Simpan kelas' }}</button></form></section>
           <section class="quick-stats"><div class="stat-card"><span class="stat-icon stat-blue">📖</span><div><small>Mata pelajaran</small><b>{{ subjects.length }} bidang</b></div></div><div class="stat-card"><span class="stat-icon stat-yellow">🏅</span><div><small>Latihan selesai</small><b>{{ history.length }} latihan</b></div></div><div class="stat-card"><span class="stat-icon stat-green">🌱</span><div><small>Rata-rata nilai</small><b>{{ history.length ? Math.round(history.reduce((a,h)=>a+h.percent,0)/history.length) : 0 }}%</b></div></div></section>
-          <section id="subjects" class="subject-section"><div class="section-title"><div><div class="eyebrow">PILIH DAN MULAI</div><h2>Mau belajar apa hari ini?</h2><p>Materi untuk kelas {{ selectedGrade }} ditampilkan sesuai akunmu.</p></div><span class="section-decoration">✳</span></div>
+          <section id="subjects" class="subject-section"><div class="section-title"><div><div class="eyebrow">PILIH DAN MULAI</div><h2>Mau belajar apa hari ini?</h2><p>Materi untuk kelas {{ selectedGrade }} ditampilkan {{ account?.role==='ADMIN' ? 'sesuai pilihan kelas admin' : 'sesuai akunmu' }}.</p></div><span class="section-decoration">✳</span></div>
             <div class="subject-grid"><button v-for="subject in subjects" :key="subject.id" class="subject-card" @click="openSubject(subject)"><span class="subject-icon" :style="{background:subject.color}"><img :src="subjectLogo(subject.name)" :alt="''" class="subject-logo-img"></span><span class="subject-name">{{ subject.name }}</span><span class="subject-description">{{ subject.description }}</span><span class="subject-bottom"><span>{{ subject.lessonCount }} bab</span><span class="circle-arrow">↗</span></span></button></div>
           </section>
           <section class="club-teaser"><span>✨</span><div><b>Belajar juga bisa lewat kegiatan yang kamu suka</b><small>{{ extracurricularCompleted }}/{{ extracurricularTotal }} kegiatan ekskul selesai · pilih klub sains, coding, cerita, atau seni</small></div><button @click="openExtracurricular">Jelajahi ekskul →</button></section>

@@ -18,7 +18,7 @@ final class CurriculumQuestionBank {
       case "Mathematics in English" -> arithmetic(grade, true);
       case "Bahasa Inggris" -> english(grade);
       case "Bahasa Indonesia" -> indonesian(grade);
-      case "IPAS" -> science(grade);
+      case "IPAS" -> science(grade, lesson.getTitle());
       case "Bahasa Arab" -> arabic(grade);
       case "PAI" -> religion(grade);
       case "Pendidikan Pancasila" -> pancasila(lesson.getTitle());
@@ -289,8 +289,101 @@ final class CurriculumQuestionBank {
     return bank;
   }
 
-  private static List<QuestionBank.Item> science(int grade) {
+  private static String[][] earlyScience(String title) {
+    String topic = title.toLowerCase(java.util.Locale.ROOT);
+    if (topic.contains("aku dan lingkungan")) return new String[][] {
+      {"Tempat kita tinggal bersama keluarga disebut ...","rumah","sungai","hutan","pasar","Rumah adalah tempat kita tinggal bersama keluarga."},
+      {"Tempat kita belajar bersama guru dan teman adalah ...","sekolah","kebun","pantai","stasiun","Di sekolah kita belajar bersama guru dan teman."},
+      {"Orang yang mengajar kita di sekolah disebut ...","guru","dokter","petani","nelayan","Guru mengajar dan membimbing siswa di sekolah."},
+      {"Tempat memasak makanan di rumah disebut ...","dapur","kamar tidur","garasi","teras","Makanan biasanya dimasak di dapur."},
+      {"Benda yang ada di dalam kelas contohnya ...","papan tulis","perahu","traktor","kompor","Papan tulis dipakai guru saat mengajar di kelas."},
+      {"Sampah sebaiknya dibuang ke ...","tempat sampah","sungai","selokan","halaman tetangga","Membuang sampah di tempatnya membuat lingkungan bersih."},
+      {"Agar kelas tetap bersih, kita dapat ...","menyapu lantai","mencoret meja","membuang sampah di lantai","menginjak kursi","Menyapu lantai membuat kelas bersih dan nyaman."},
+      {"Saat bertemu tetangga, kita sebaiknya ...","menyapa dengan sopan","mengejek","berteriak","membuang muka","Menyapa dengan sopan membuat hubungan dengan tetangga menjadi baik."},
+      {"Tumbuhan yang dapat ditemukan di halaman rumah contohnya ...","pohon mangga","kucing","sepeda","batu","Pohon mangga adalah tumbuhan."},
+      {"Menyiram tanaman di halaman termasuk kegiatan ...","merawat lingkungan","merusak lingkungan","mengotori lingkungan","mengganggu tetangga","Tanaman yang disiram dapat tumbuh dan membuat lingkungan asri."}};
+    if (topic.contains("pancaindra")) return new String[][] {
+      {"Kita melihat benda dengan ...","mata","telinga","hidung","lidah","Mata adalah indra penglihat."},
+      {"Kita mendengar suara dengan ...","telinga","mata","kulit","lidah","Telinga adalah indra pendengar."},
+      {"Kita mencium bau bunga dengan ...","hidung","telinga","mata","kaki","Hidung adalah indra pencium."},
+      {"Rasa manis pada gula dapat kita kenali dengan ...","lidah","mata","telinga","rambut","Lidah adalah indra pengecap."},
+      {"Kita dapat merasakan kain yang halus dengan ...","kulit","telinga","hidung","gigi","Kulit adalah indra peraba."},
+      {"Jumlah pancaindra manusia adalah ...","lima","dua","tiga","sepuluh","Pancaindra terdiri atas mata, telinga, hidung, lidah, dan kulit."},
+      {"Bagian tubuh yang kita pakai untuk berjalan adalah ...","kaki","telinga","hidung","rambut","Kita berjalan menggunakan kaki."},
+      {"Bagian tubuh yang kita pakai untuk memegang pensil adalah ...","tangan","kaki","telinga","lutut","Tangan dipakai untuk memegang benda."},
+      {"Agar mata tetap sehat, sebaiknya kita membaca di tempat yang ...","terang","gelap","berasap","berdebu","Tempat yang terang membuat mata tidak cepat lelah."},
+      {"Agar telinga tetap sehat, kita sebaiknya ...","menjauhi suara yang terlalu keras","memasukkan benda kecil ke telinga","berteriak di dekat telinga teman","membiarkan telinga kotor","Suara yang terlalu keras dapat merusak pendengaran."}};
+    if (topic.contains("makhluk hidup")) return new String[][] {
+      {"Yang termasuk makhluk hidup adalah ...","kucing","batu","meja","sepatu","Kucing bernapas, makan, tumbuh, dan bergerak."},
+      {"Yang termasuk benda tak hidup adalah ...","batu","ayam","pohon","ikan","Batu tidak makan, tidak bernapas, dan tidak tumbuh."},
+      {"Agar dapat hidup, hewan dan manusia membutuhkan ...","makanan dan minuman","mainan dan buku","kursi dan meja","tas dan sepatu","Makanan dan minuman dibutuhkan untuk hidup dan tumbuh."},
+      {"Agar tumbuh dengan baik, tanaman membutuhkan ...","air dan cahaya matahari","mainan dan buku","kursi dan meja","tas dan sepatu","Tanaman membutuhkan air dan cahaya matahari untuk tumbuh."},
+      {"Ikan hidup di ...","air","pohon","lemari","awan","Ikan hidup dan berenang di air."},
+      {"Burung berpindah tempat dengan cara ...","terbang","berenang di dasar laut","menggali tanah","melata","Burung menggunakan sayapnya untuk terbang."},
+      {"Anak ayam lama-kelamaan menjadi ayam dewasa. Ini menunjukkan makhluk hidup dapat ...","tumbuh","membeku","mencair","berkarat","Makhluk hidup tumbuh menjadi lebih besar."},
+      {"Makhluk hidup bernapas untuk mendapatkan ...","udara","pasir","batu","kertas","Makhluk hidup membutuhkan udara untuk bernapas."},
+      {"Hewan yang berkaki empat contohnya ...","kambing","ayam","ikan","ular","Kambing berjalan dengan empat kaki."},
+      {"Yang termasuk tumbuhan adalah ...","pohon pisang","kelinci","kupu-kupu","sepeda","Pohon pisang adalah tumbuhan."}};
+    if (topic.contains("cuaca")) return new String[][] {
+      {"Saat hujan turun, benda yang kita pakai agar tidak basah adalah ...","payung","kacamata","topi ulang tahun","sandal","Payung melindungi tubuh dari air hujan."},
+      {"Jika Matahari bersinar dan langit biru, cuacanya ...","cerah","hujan lebat","berkabut tebal","bersalju","Langit biru dan sinar Matahari menandakan cuaca cerah."},
+      {"Langit yang tertutup awan gelap disebut ...","mendung","cerah","pelangi","terik","Awan gelap membuat langit mendung dan sering menjadi tanda akan hujan."},
+      {"Pakaian basah paling cepat kering jika dijemur saat cuaca ...","cerah","hujan","mendung gelap","badai","Panas Matahari membantu pakaian cepat kering."},
+      {"Setelah hujan, kadang di langit tampak ...","pelangi","salju","gunung","sungai","Pelangi dapat muncul ketika cahaya Matahari mengenai titik air."},
+      {"Saat cuaca panas, kita sebaiknya ...","minum air yang cukup","memakai jaket tebal","berhenti minum","bermain di bawah terik sepanjang hari","Minum air yang cukup membantu tubuh tidak kekurangan cairan."},
+      {"Layang-layang mudah diterbangkan ketika ada ...","angin","hujan","petir","kabut","Tiupan angin membantu layang-layang naik."},
+      {"Saat hujan disertai petir, kita sebaiknya ...","berlindung di dalam bangunan","berdiri di bawah pohon","bermain di lapangan","berenang di sungai","Berlindung di dalam bangunan lebih aman saat ada petir."},
+      {"Pagi cerah lalu siang hujan. Ini menunjukkan cuaca dapat ...","berubah","berhenti selamanya","dimakan","dibeli","Cuaca dapat berubah dalam waktu singkat."},
+      {"Dua musim di Indonesia adalah musim hujan dan musim ...","kemarau","salju","gugur","semi","Indonesia mengalami musim hujan dan musim kemarau."}};
+    if (topic.contains("hewan dan tumbuhan")) return new String[][] {
+      {"Hewan yang sering dipelihara di rumah contohnya ...","kucing","harimau","buaya","hiu","Kucing adalah hewan peliharaan yang jinak."},
+      {"Makanan utama sapi adalah ...","rumput","ikan","daging","batu","Sapi adalah hewan pemakan tumbuhan."},
+      {"Ayam berkembang biak dengan cara ...","bertelur","melahirkan","membelah diri","bertunas","Ayam betina bertelur, lalu telur dapat menetas."},
+      {"Hewan yang susunya sering kita minum adalah ...","sapi","ayam","ikan","kupu-kupu","Sapi menghasilkan susu."},
+      {"Bagian tumbuhan yang biasanya berada di dalam tanah adalah ...","akar","bunga","buah","daun","Akar berada di dalam tanah dan menyerap air."},
+      {"Warna daun yang masih segar biasanya ...","hijau","ungu","hitam","biru","Sebagian besar daun segar berwarna hijau."},
+      {"Sayuran yang berasal dari tumbuhan contohnya ...","bayam","telur","susu","ikan","Bayam adalah sayuran dari tumbuhan."},
+      {"Agar tanaman di pot tidak layu, kita perlu ...","menyiramnya","menutupnya dari cahaya","mencabut akarnya","memotong semua daunnya","Tanaman membutuhkan air agar tetap segar."},
+      {"Ikan hias di rumah dapat dipelihara di ...","akuarium","kandang ayam","lemari","kotak pasir","Ikan membutuhkan air sehingga dipelihara di akuarium atau kolam."},
+      {"Cara menyayangi hewan peliharaan adalah ...","memberi makan dan menjaga kandangnya tetap bersih","memukulnya","membiarkannya kelaparan","menarik ekornya","Hewan peliharaan perlu dirawat dengan baik."}};
+    if (topic.contains("tubuhku sehat")) return new String[][] {
+      {"Agar gigi tetap sehat, kita sebaiknya menyikat gigi ...","pagi dan sebelum tidur","sebulan sekali","hanya saat sakit gigi","tidak perlu","Menyikat gigi pagi dan sebelum tidur membantu menjaga gigi."},
+      {"Sebelum makan, kita sebaiknya ...","mencuci tangan dengan sabun","bermain tanah","memegang sampah","menggaruk kaki","Mencuci tangan dengan sabun membantu menghilangkan kuman."},
+      {"Makanan yang menyehatkan contohnya ...","sayur dan buah","permen setiap saat","minuman manis setiap saat","keripik setiap saat","Sayur dan buah mengandung zat yang baik bagi tubuh."},
+      {"Minuman terbaik saat kita haus adalah ...","air putih","minuman bersoda","kopi","sirup yang sangat manis","Air putih membantu memenuhi kebutuhan cairan tubuh."},
+      {"Agar tubuh tidak lelah keesokan harinya, pada malam hari kita perlu ...","tidur cukup","bermain gawai sampai larut","begadang","makan permen","Tidur cukup membantu tubuh beristirahat."},
+      {"Berlari dan bersepeda termasuk kegiatan ...","olahraga","tidur","memasak","membaca","Olahraga membuat tubuh bugar."},
+      {"Agar badan bersih, kita perlu ...","mandi setiap hari","memakai baju kotor","jarang mandi","bermain di selokan","Mandi membersihkan badan dari kotoran dan keringat."},
+      {"Kuku yang panjang sebaiknya ...","dipotong","digigit","dibiarkan kotor","dicat dengan spidol","Kuku pendek lebih mudah dijaga kebersihannya."},
+      {"Jika merasa sakit, kita sebaiknya ...","memberi tahu orang dewasa","menyembunyikannya","minum obat sendiri tanpa izin","tetap bermain sampai lelah","Orang dewasa dapat membantu kita mendapatkan perawatan yang tepat."},
+      {"Saat batuk, kita sebaiknya ...","menutup mulut dengan lengan atau tisu","batuk di depan wajah teman","meludah sembarangan","berteriak","Menutup mulut membantu mengurangi penyebaran kuman."}};
+    if (topic.contains("benda dan sifatnya")) return new String[][] {
+      {"Benda yang terasa keras contohnya ...","batu","kapas","busa","bantal","Batu terasa keras saat dipegang."},
+      {"Benda yang terasa lembut contohnya ...","kapas","batu","paku","kelereng","Kapas terasa lembut."},
+      {"Air termasuk benda ...","cair","padat","gas","keras","Air dapat mengalir sehingga termasuk benda cair."},
+      {"Es batu termasuk benda ...","padat","cair","gas","lunak","Es batu memiliki bentuk tetap sehingga termasuk benda padat."},
+      {"Udara di dalam balon termasuk benda ...","gas","padat","cair","keras","Udara termasuk benda gas."},
+      {"Air yang dituang ke dalam gelas akan mengikuti bentuk ...","gelasnya","mejanya","tangan kita","atap rumah","Benda cair mengikuti bentuk wadahnya."},
+      {"Es batu yang dibiarkan di tempat panas akan ...","mencair","membesar","menjadi batu","menjadi kayu","Panas membuat es batu mencair menjadi air."},
+      {"Benda yang mudah pecah jika jatuh contohnya ...","gelas kaca","bola karet","bantal","kain","Kaca mudah pecah jika jatuh."},
+      {"Karet gelang dapat ditarik lalu kembali seperti semula karena bersifat ...","lentur","rapuh","cair","panas","Karet bersifat lentur."},
+      {"Benda yang lebih ringan daripada batu bata adalah ...","bulu ayam","kursi besi","lemari kayu","karung beras","Bulu ayam jauh lebih ringan daripada batu bata."}};
+    return new String[][] {
+      {"Tempat meminjam dan membaca buku di sekolah disebut ...","perpustakaan","kantin","lapangan","gudang","Perpustakaan menyediakan buku untuk dibaca dan dipinjam."},
+      {"Tempat membeli makanan di sekolah disebut ...","kantin","perpustakaan","kelas","UKS","Kantin menjual makanan dan minuman."},
+      {"Jika sakit atau terluka di sekolah, kita dapat pergi ke ...","UKS","kantin","lapangan","gudang","UKS adalah tempat pertolongan pertama di sekolah."},
+      {"Tugas membersihkan kelas secara bergiliran disebut ...","piket","upacara","ulangan","istirahat","Piket adalah tugas menjaga kebersihan kelas secara bergiliran."},
+      {"Bekerja bersama membersihkan lingkungan rumah disebut ...","gotong royong","bertengkar","bermalas-malasan","berebut","Gotong royong membuat pekerjaan terasa lebih ringan."},
+      {"Orang yang tinggal di dekat rumah kita disebut ...","tetangga","kepala sekolah","masinis","pilot","Tetangga adalah orang yang tinggal di sekitar rumah kita."},
+      {"Contoh aturan sekolah yang baik adalah ...","datang tepat waktu","mencoret dinding","membuang sampah di kelas","mengganggu teman","Datang tepat waktu membantu kegiatan belajar berjalan tertib."},
+      {"Dinding sekolah harus dijaga dengan ...","tidak mencoretnya","menggambarinya dengan spidol","memukulnya","menempelkan permen karet","Fasilitas sekolah digunakan bersama sehingga perlu dijaga."},
+      {"Setelah memakai air di rumah, kita sebaiknya ...","menutup keran","membiarkan air mengalir","merusak keran","bermain air sepanjang hari","Menutup keran membantu menghemat air."},
+      {"Saluran air di sekitar rumah harus bebas dari sampah agar ...","air mengalir lancar","air tidak bisa lewat","lingkungan menjadi bau","banyak nyamuk bersarang","Saluran yang bersih membantu mengurangi genangan."}};
+  }
+
+  private static List<QuestionBank.Item> science(int grade, String title) {
     String[][] raw = switch (grade) {
+      case 1, 2 -> earlyScience(title);
       case 3 -> new String[][] {
         {"Bagian tumbuhan yang menyerap air dari tanah adalah ...","akar","daun","bunga","buah","Akar menyerap air dan mineral dari tanah."},
         {"Hewan yang memakan tumbuhan disebut ...","herbivor","karnivor","omnivor","pengurai","Herbivor memperoleh makanan dari tumbuhan."},

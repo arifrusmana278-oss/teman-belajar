@@ -57,11 +57,13 @@ final class CurriculumCatalog {
       {"Bangga menjadi anak Indonesia", "Musisi Indonesia di panggung dunia", "Taman Nasional dan situs warisan dunia", "Jeda untuk iklim"}
     });
     add(result, "IPAS", new String[][] {
+      {"Aku dan Lingkungan Sekitarku", "Bagian Tubuh dan Pancaindra", "Makhluk Hidup di Sekitarku", "Cuaca dan Perubahannya"},
+      {"Hewan dan Tumbuhan di Sekitarku", "Tubuhku Sehat", "Benda dan Sifatnya", "Lingkungan Rumah dan Sekolah"},
       {"Mari Kenali Hewan di Sekitar Kita", "Ayo Mengenal Siklus pada Makhluk Hidup", "Hidup Bersama Alam", "Berkenalan dengan Energi", "Aku dan Lingkungan Sekitarku", "Aku Bagian dari Masyarakat", "Cerita dari Kampung Halaman", "Bentang Alam Indonesia"},
       {"Mengubah Bentuk Energi", "Gaya di Sekitar Kita", "Di Sini Tempat Tinggalku", "Iklim dan Perubahannya", "Bagaimana Mendapatkan Semua Keperluan Kita?", "Membangun Masyarakat yang Beradab", "Keragaman Budaya dan Kearifan Lokal", "Menjadi Pahlawan Lingkungan"},
       {"Di Mana Indonesia Berada?", "Majulah Daerahku!", "Harmoni dalam Ekosistem", "Air Sumber Kehidupan", "Daerahku yang Bersejarah", "Perubahan pada Diriku", "Bermain dengan Cahaya", "Ramai karena Bunyi"},
       {"Makanan Bergizi untuk Kesehatan Pencernaanmu", "Tarik dan Embuskan", "Jejak Sang Pahlawan", "Kearifan Lokal, Warisan Leluhur untuk Persatuan Bangsa", "Energi untuk Masa Depan", "Mengembara di Jagat Raya"}
-    }, 3);
+    });
     add(result, "Bahasa Inggris", new String[][] {
       {"Greetings and classroom language", "My friends and family", "Numbers, colors, and things", "My daily activities"},
       {"My school", "My family and friends", "Food and drinks", "Daily routines"},
@@ -147,6 +149,35 @@ final class CurriculumCatalog {
         result.add(new Seed(subject, grade, title, content));
       }
     }
+  }
+
+  private static String[] earlyScienceMaterial(String chapter) {
+    return switch (chapter) {
+      case "Aku dan Lingkungan Sekitarku" -> new String[] {
+        "Lingkungan adalah semua yang ada di sekitar kita. Di rumah ada keluarga dan benda-benda yang kita pakai setiap hari. Di sekolah ada guru, teman, dan ruang kelas. Di sekitar kita juga ada tumbuhan, hewan, dan tetangga. Kita ikut menjaga lingkungan agar tetap bersih dan nyaman.",
+        "Contoh: setelah makan jajan, bungkusnya dibuang ke tempat sampah. Halaman dan kelas pun tetap bersih."};
+      case "Bagian Tubuh dan Pancaindra" -> new String[] {
+        "Tubuh kita memiliki kepala, tangan, kaki, dan bagian lainnya. Kita juga memiliki lima pancaindra: mata untuk melihat, telinga untuk mendengar, hidung untuk mencium bau, lidah untuk mengecap rasa, dan kulit untuk meraba. Semua bagian tubuh perlu dijaga kebersihannya.",
+        "Contoh: saat makan jeruk, mata melihat warnanya, hidung mencium baunya, lidah mengecap rasanya, dan kulit tangan merasakan permukaannya."};
+      case "Makhluk Hidup di Sekitarku" -> new String[] {
+        "Manusia, hewan, dan tumbuhan adalah makhluk hidup. Makhluk hidup bernapas, memerlukan makanan dan air, tumbuh, dan berkembang biak. Batu, meja, dan sepatu adalah benda tak hidup karena tidak makan dan tidak tumbuh.",
+        "Contoh: anak kucing minum susu dan lama-kelamaan menjadi besar, sedangkan batu di halaman tidak makan dan tidak tumbuh."};
+      case "Cuaca dan Perubahannya" -> new String[] {
+        "Cuaca adalah keadaan udara yang kita rasakan pada hari itu. Cuaca dapat cerah, berawan, mendung, berangin, atau hujan, dan dapat berubah dalam satu hari. Kita menyesuaikan pakaian dan kegiatan dengan cuaca. Indonesia memiliki musim hujan dan musim kemarau.",
+        "Contoh: pagi hari langit cerah, lalu siang hari awan menjadi gelap dan hujan turun. Karena itu, kita menyiapkan payung atau jas hujan."};
+      case "Hewan dan Tumbuhan di Sekitarku" -> new String[] {
+        "Di sekitar kita ada banyak hewan dan tumbuhan. Hewan berbeda-beda bentuk tubuh, makanan, dan tempat hidupnya. Tumbuhan memiliki bagian seperti akar, batang, daun, bunga, dan buah. Hewan dan tumbuhan perlu dirawat dengan baik.",
+        "Contoh: sapi memakan rumput dan ikan hidup di air. Tanaman di pot perlu disiram dan mendapat cahaya matahari agar tumbuh segar."};
+      case "Tubuhku Sehat" -> new String[] {
+        "Tubuh sehat membuat kita dapat belajar dan bermain dengan senang. Kita menjaga kesehatan dengan makan makanan bergizi, minum air putih, mandi, menyikat gigi, mencuci tangan, berolahraga, dan tidur cukup. Jika merasa sakit, beri tahu orang dewasa.",
+        "Contoh: sebelum makan siang, cuci tangan dengan sabun, lalu makan nasi, lauk, sayur, dan buah."};
+      case "Benda dan Sifatnya" -> new String[] {
+        "Benda dapat berbentuk padat, cair, atau gas. Batu memiliki bentuk tetap, air mengikuti bentuk wadahnya, dan udara mengisi balon. Benda juga memiliki sifat, misalnya keras, lembut, ringan, berat, atau lentur. Sifat benda dapat kita kenali dengan mengamatinya.",
+        "Contoh: tuang air ke dalam gelas lalu ke dalam mangkuk. Bentuk air berubah mengikuti wadahnya, sedangkan kelereng tetap bulat."};
+      default -> new String[] {
+        "Rumah dan sekolah adalah lingkungan yang dekat dengan kita. Di sekolah ada kelas, perpustakaan, kantin, UKS, dan lapangan. Di rumah dan sekolah ada aturan agar semua orang merasa aman dan nyaman. Kita ikut menjaganya dengan piket, gotong royong, dan menghemat air.",
+        "Contoh: saat mendapat giliran piket, kita menyapu kelas bersama teman. Kelas menjadi bersih dan nyaman untuk belajar."};
+    };
   }
 
   private static String material(String subject, int grade, String chapter) {
@@ -236,6 +267,13 @@ final class CurriculumCatalog {
           workedExample = "Contoh: catat jenis pekerjaan warga di lingkungan sekitar, kelompokkan hasilnya, lalu jelaskan kebutuhan yang dipenuhi pekerjaan tersebut.";
         }
         practice = "Latihan mandiri: amati contoh “" + chapter + "” di sekitar rumah atau sekolah, tuliskan apa yang terlihat, bukti yang mendukung, dan satu pertanyaan lanjutan.";
+        if (grade <= 2) {
+          String[] early = earlyScienceMaterial(chapter);
+          objectives = "Setelah belajar, siswa dapat mengamati hal di sekitarnya, menyebutkan contohnya, dan menceritakan apa yang dilihat.";
+          concept = early[0];
+          workedExample = early[1];
+          practice = "Latihan mandiri: bersama orang tua atau guru, amati satu contoh “" + chapter + "” di sekitarmu, lalu gambar atau ceritakan apa yang kamu lihat.";
+        }
       }
       case "Bahasa Inggris" -> {
         objectives = "By the end of this lesson, learners can recognize key words, understand a short message, and use a simple spoken or written sentence in context.";
