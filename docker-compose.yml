@@ -1,0 +1,62 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: belajarsd
+      POSTGRES_USER: belajarsd
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-belajar_local_change_me}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U belajarsd -d belajarsd"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/belajarsd
+      SPRING_DATASOURCE_USERNAME: belajarsd
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-belajar_local_change_me}
+      APP_CORS_ORIGINS: http://localhost:5173
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@temanbelajar.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      DONATION_OWNER_EMAIL: ${DONATION_OWNER_EMAIL:-arifrusmana278@gmail.com}
+      BACKEND_PUBLIC_URL: ${BACKEND_PUBLIC_URL:-http://localhost:8080}
+      MAIL_HOST: ${MAIL_HOST:-}
+      MAIL_PORT: ${MAIL_PORT:-587}
+      MAIL_USERNAME: ${MAIL_USERNAME:-}
+      MAIL_PASSWORD: ${MAIL_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-}
+      MAIL_SMTP_AUTH: ${MAIL_SMTP_AUTH:-true}
+      MAIL_SMTP_STARTTLS: ${MAIL_SMTP_STARTTLS:-true}
+      MAIL_SMTP_SSL: ${MAIL_SMTP_SSL:-false}
+      AI_QUESTIONS_ENABLED: ${AI_QUESTIONS_ENABLED:-false}
+      AI_BASE_URL: ${AI_BASE_URL:-https://api.openai.com/v1/chat/completions}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-}
+      AI_TIMEOUT_SECONDS: ${AI_TIMEOUT_SECONDS:-90}
+      AI_QUESTIONS_PER_LESSON: ${AI_QUESTIONS_PER_LESSON:-12}
+      AI_QUESTIONS_RETENTION_DAYS: ${AI_QUESTIONS_RETENTION_DAYS:-30}
+      AI_QUESTIONS_BATCH_SIZE: ${AI_QUESTIONS_BATCH_SIZE:-1000}
+      AI_QUESTIONS_SCHEDULE_CRON: ${AI_QUESTIONS_SCHEDULE_CRON:-0 59 23 * * SUN}
+      AI_QUESTIONS_SCHEDULE_ZONE: ${AI_QUESTIONS_SCHEDULE_ZONE:-Asia/Jakarta}
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    environment:
+      NGROK_HOST: ${NGROK_HOST:-}
+      VITE_API_PROXY_TARGET: http://backend:8080
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+volumes:
+  postgres_data:
