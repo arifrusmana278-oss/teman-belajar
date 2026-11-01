@@ -10,6 +10,7 @@ public interface StudentAccountRepository extends JpaRepository<StudentAccount, 
   boolean existsByEmail(String email);
   boolean existsByUsernameIgnoreCase(String username);
   List<StudentAccount> findByRoleOrderByIdAsc(String role);
+  Optional<StudentAccount> findFirstByRoleOrderByIdAsc(String role);
   List<StudentAccount> findByRoleIsNull();
   List<StudentAccount> findByUsernameIsNull();
 }
