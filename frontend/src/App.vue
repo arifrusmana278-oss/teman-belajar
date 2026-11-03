@@ -22,10 +22,17 @@ const subjects = ref([]), lessons = ref([]), allSubjectLessons = ref([]), histor
 const selectedGrade = ref(localStorage.getItem('tb_selected_grade') || '1')
 const selectedNav = ref('home')
 const loading = ref(true), error = ref(''), selectedSubject = ref(null), activeLesson = ref(null)
+const questionsNote = ref('')
 const questions = ref([]), answers = ref([]), questionIndex = ref(0), selectedOption = ref(null), feedback = ref(null)
 const printPreview = ref(null), printLoading = ref(false), printError = ref('')
 const score = ref(0), finished = ref(false), saving = ref(false), reviewMode = ref(false)
 const hintVisible = ref(false), offlineMode = ref(!navigator.onLine)
+const selectedMethod = ref(null), essayWorking = ref(''), essayAnswer = ref('')
+const isEssay = computed(() => currentQuestion.value?.type === 'ESSAY')
+const isAnswered = computed(() => !!answers.value[questionIndex.value])
+const canCheck = computed(() => isEssay.value ? essayWorking.value.trim().length >= 3 && essayAnswer.value.trim().length > 0 : selectedOption.value !== null)
+const methodTabs = computed(() => { const tabs = [{id:'long',label:'Cara panjang'},{id:'quick',label:'Cara cepat ⚡'}]; return activeLesson.value?.subjectName === 'Hitung Cepat' ? tabs.reverse() : tabs })
+const activeMethod = computed(() => feedback.value?.quickMethod ? (selectedMethod.value ?? methodTabs.value[0].id) : 'long')
 const textScale = ref(Number(localStorage.getItem('tb_text_scale') || 1))
 const summaryMessage = ref(''), speechPlaying = ref(false)
 const speechVoices = ref([]), selectedVoiceURI = ref(localStorage.getItem('tb_speech_voice') || '')
@@ -114,7 +121,9 @@ function subjectLogo(name) {
     'matematika': 'subject-matematika.svg', 'bahasa indonesia': 'subject-bahasa-indonesia.svg',
     'bahasa inggris': 'subject-bahasa-inggris.svg', 'hitung cepat': 'subject-hitung-cepat.svg',
     'ipas': 'subject-ipas.svg', 'bahasa arab': 'subject-bahasa-arab.svg', 'pai': 'subject-pai.svg',
-    'mathematics in english': 'subject-math-english.svg'
+    'mathematics in english': 'subject-math-english.svg', 'fiqih': 'subject-fiqih.svg',
+    'akidah akhlak': 'subject-akidah-akhlak.svg', 'sejarah kebudayaan islam': 'subject-ski.svg',
+    'sejarah indonesia': 'subject-sejarah-indonesia.svg'
   }
   return `/` + (logos[(name || '').toLowerCase()] || 'subject-matematika.svg')
 }
@@ -135,6 +144,7 @@ async function request(path, options={}) {
   if (response.status === 204) return null
   const data = await response.json()
   if (cacheable) writeStudyCache(cacheKey, data)
+  if (options.withHeaders) return { data, headers: response.headers }
   return data
 }
 let studyDbPromise
@@ -413,9 +423,16 @@ async function saveGrade() {
 }
 async function openSubject(subject) { selectedNav.value = 'subjects'; extracurricularView.value = false; selectedSubject.value = subject; activeLesson.value = null; lessons.value = []; try { allSubjectLessons.value = await request(`/subjects/${subject.id}/lessons${adminGradeQuery()}`); lessons.value = allSubjectLessons.value } catch(e) { error.value = e.message } }
 async function openLesson(lesson, questionLimit = 10) {
-  activeLesson.value = lesson; questions.value = []; answers.value = []; questionIndex.value = 0; selectedOption.value = null; feedback.value = null; score.value = 0; finished.value = false; reviewMode.value = false
+  activeLesson.value = lesson; questions.value = []; answers.value = []; questionIndex.value = 0; selectedOption.value = null; essayWorking.value = ''; essayAnswer.value = ''; feedback.value = null; score.value = 0; finished.value = false; reviewMode.value = false
   hintVisible.value = false; speechPlaying.value = false; window.speechSynthesis?.cancel()
-  try { const [detail, qs] = await Promise.all([request(`/lessons/${lesson.id}`), request(`/lessons/${lesson.id}/questions`, { cache:'no-store' })]); activeLesson.value = detail; questions.value = qs.slice(0, questionLimit); answers.value = Array(questions.value.length).fill(null) }
+  questionsNote.value = ''
+  try {
+    const [detail, qs] = await Promise.all([request(`/lessons/${lesson.id}`), request(`/lessons/${lesson.id}/questions?limit=${questionLimit}`, { cache:'no-store', withHeaders:true })])
+    activeLesson.value = detail; questions.value = qs.data; answers.value = Array(questions.value.length).fill(null)
+    const exhausted = qs.headers.get('X-Questions-Exhausted')
+    questionsNote.value = exhausted === 'today' ? 'Semua soal di bab ini sudah kamu kerjakan hari ini. Soal tidak diulang pada hari yang sama, jadi coba bab lain atau kembali besok, ya!'
+      : exhausted === 'partial' ? `Sisa soal baru di bab ini untuk hari ini tinggal ${questions.value.length}. Soal yang sudah kamu kerjakan hari ini tidak diulang.` : ''
+  }
   catch(e) { error.value = e.message }
 }
 async function previewPrint(lesson) {
@@ -427,10 +444,10 @@ async function previewPrint(lesson) {
 function closePrintPreview() { printPreview.value = null; printError.value = '' }
 function printQuestions() { window.print() }
 async function checkAnswer() {
-  if (selectedOption.value === null || feedback.value) return
+  if (!canCheck.value || isAnswered.value) return
   try {
-    feedback.value = await request(`/lessons/${activeLesson.value.id}/check`, { method:'POST', body:JSON.stringify({questionId:currentQuestion.value.id, selectedOptionText:currentQuestion.value.options[selectedOption.value]}) })
-    answers.value[questionIndex.value] = { selectedOptionIndex:selectedOption.value, feedback:feedback.value }
+    const result = await request(`/lessons/${activeLesson.value.id}/check`, { method:'POST', body:JSON.stringify({questionId:currentQuestion.value.id, selectedOptionText:isEssay.value ? essayAnswer.value.trim() : currentQuestion.value.options[selectedOption.value]}) })
+    answers.value[questionIndex.value] = { selectedOptionIndex:selectedOption.value, essayWorking:essayWorking.value, essayAnswer:essayAnswer.value, feedback:result }
     score.value = answers.value.filter(answer => answer?.feedback.correct).length
     if (questionIndex.value + 1 < questions.value.length) goToQuestion(questionIndex.value + 1)
     else await finishQuiz()
@@ -443,9 +460,13 @@ function goToQuestion(index) {
   if (index < 0 || index > lastUnlocked) return
   questionIndex.value = index
   hintVisible.value = false
+  selectedMethod.value = null
   const saved = answers.value[index]
   selectedOption.value = saved?.selectedOptionIndex ?? null
-  feedback.value = saved?.feedback ?? null
+  essayWorking.value = saved?.essayWorking ?? ''
+  essayAnswer.value = saved?.essayAnswer ?? ''
+  // Explanations stay hidden until every question is answered and the student opens the review.
+  feedback.value = reviewMode.value ? saved?.feedback ?? null : null
 }
 async function finishQuiz() {
   if (answers.value.some(answer => !answer)) return
@@ -456,6 +477,7 @@ async function finishQuiz() {
   catch(e) { error.value = `Nilai tampil, tetapi belum tersimpan: ${e.message}` }
   finally { saving.value = false }
 }
+function goToFirstUnanswered() { goToQuestion(answers.value.findIndex(answer => !answer)) }
 function reviewAnswers() { finished.value = false; reviewMode.value = true; goToQuestion(0) }
 function returnToResults() { finished.value = true; reviewMode.value = false }
 function setName() { profileOpen.value = !profileOpen.value }
@@ -530,18 +552,21 @@ onUnmounted(() => { window.clearInterval(philosophyTimer); window.removeEventLis
             <aside class="local-example"><b>🌏 Contoh di sekitar kita</b><p>{{ localExample }}</p></aside>
             <label class="voice-picker">Suara bacaan<select v-model="selectedVoiceURI" @change="chooseSpeechVoice"><option value="">Suara default perangkat</option><option v-for="voice in selectableVoices" :key="voice.voiceURI" :value="voice.voiceURI">{{ voice.name }} · {{ voice.lang }}</option></select><small v-if="!selectableVoices.some(voice => /^id(?:-|$)/i.test(voice.lang || ''))">Suara Bahasa Indonesia belum tersedia di perangkat ini; pilihan suara yang ada tetap bisa dicoba.</small></label>
             <div class="lesson-actions"><button class="secondary-btn lesson-action-btn" @click="speak(activeLesson.title + '. ' + (activeLesson.content || ''))">🔊 Dengarkan materi</button><button class="secondary-btn lesson-action-btn" @click="previewPrint(activeLesson)">Lihat dan cetak soal</button></div>
+            <p v-if="questionsNote && questions.length && !finished" class="muted questions-note">{{ questionsNote }}</p>
             <div v-if="!finished && questions.length" class="quiz-box">
               <div v-if="reviewMode" class="review-banner"><span>Mode tinjau: jawaban dan pembahasanmu.</span><button @click="returnToResults">Kembali ke hasil</button></div>
               <div class="quiz-progress"><span>Soal {{ questionIndex+1 }} dari {{ questions.length }} · {{ answeredCount }} dijawab</span><div class="progress-track"><div class="progress-fill" :style="{width: (answeredCount/questions.length*100)+'%'}"></div></div></div>
-              <div class="question-review"><b>Nomor soal</b><div class="question-navigation"><button v-for="(_,i) in questions" :key="i" class="question-chip" :class="{current:questionIndex===i, answered:!!answers[i]}" :disabled="!answers[i] && i!==questionIndex" :aria-label="`Soal ${i+1}${answers[i] ? ', sudah dijawab, tinjau' : ''}`" @click="goToQuestion(i)">{{ i+1 }}</button></div><small>Pilih nomor yang sudah dijawab untuk melihat kembali pilihan dan pembahasannya.</small></div>
+              <div class="question-review"><b>Nomor soal</b><div class="question-navigation"><button v-for="(_,i) in questions" :key="i" class="question-chip" :class="{current:questionIndex===i, answered:!!answers[i], 'review-right':reviewMode && answers[i]?.feedback.correct, 'review-wrong':reviewMode && answers[i] && !answers[i].feedback.correct}" :disabled="!answers[i] && i!==questionIndex" :aria-label="`Soal ${i+1}${reviewMode && answers[i] ? (answers[i].feedback.correct ? ', benar' : ', salah') : answers[i] ? ', sudah dijawab, tinjau' : ''}`" @click="goToQuestion(i)">{{ i+1 }}</button></div><small>{{ reviewMode ? 'Pilih nomor soal untuk melihat pilihanmu dan pembahasannya.' : 'Pilih nomor yang sudah dijawab untuk melihat kembali pilihanmu. Pembahasan muncul setelah semua soal dijawab.' }}</small></div>
               <div class="question-prompt"><h2>{{ currentQuestion.prompt }}</h2><button type="button" class="audio-btn" :aria-label="speechPlaying ? 'Hentikan audio' : 'Dengarkan soal'" @click="speakQuestion">{{ speechPlaying ? '⏹' : '🔊' }}</button></div>
-              <button v-if="!feedback && !reviewMode" class="hint-btn" type="button" @click="hintVisible=!hintVisible">{{ hintVisible ? 'Sembunyikan petunjuk' : '💡 Butuh petunjuk?' }}</button><p v-if="hintVisible && !feedback" class="hint-card">{{ studyHint }}</p>
-              <div class="options"><button v-for="(option,i) in currentQuestion.options" :key="i" class="option" :class="{'arabic-option':activeLesson.subjectName==='Bahasa Arab', chosen:selectedOption===i, right:feedback && option===feedback.correctOption, wrong:feedback && i===selectedOption && !feedback.correct}" :disabled="!!feedback" @click="selectedOption=i"><span class="option-letter">{{ ['A','B','C','D'][i] || i+1 }}</span><span :dir="activeLesson.subjectName==='Bahasa Arab' ? 'rtl' : 'auto'">{{ option }}</span><span v-if="feedback && (i===selectedOption || option===feedback.correctOption)" class="option-status">{{ option===feedback.correctOption ? '✓' : '↻' }}</span></button></div>
-              <div v-if="feedback" class="feedback" :class="feedback.correct?'feedback-good':'feedback-try'"><b>{{ feedback.correct ? 'Hebat! Jawabanmu benar 🎉' : 'Belum tepat, tidak apa-apa! 💪' }}</b><p>{{ feedback.explanation }}</p></div>
-              <button v-if="!feedback" class="primary-btn" :disabled="selectedOption===null || offlineMode" @click="checkAnswer">{{ offlineMode ? 'Menunggu koneksi untuk memeriksa' : 'Periksa jawaban' }} <span v-if="!offlineMode">→</span></button>
+              <button v-if="!isAnswered && !reviewMode" class="hint-btn" type="button" @click="hintVisible=!hintVisible">{{ hintVisible ? 'Sembunyikan petunjuk' : '💡 Butuh petunjuk?' }}</button><p v-if="hintVisible && !isAnswered" class="hint-card">{{ studyHint }}</p>
+              <div v-if="isEssay" class="essay-form"><span class="essay-badge">Soal esai</span><label for="essay-working">Tuliskan langkah-langkahmu</label><textarea id="essay-working" v-model="essayWorking" rows="5" maxlength="1000" :disabled="isAnswered" placeholder="Contoh: pertama aku menghitung ..."></textarea><label for="essay-answer">Jawaban akhir</label><input id="essay-answer" :class="feedback ? (feedback.correct ? 'answer-right' : 'answer-wrong') : ''" v-model="essayAnswer" type="text" maxlength="40" autocomplete="off" :disabled="isAnswered" placeholder="Tulis angkanya"><small>Yang dinilai otomatis hanya jawaban akhir. Langkahmu tetap di perangkat ini dan tidak dikirim ke server.</small></div>
+              <div v-else class="options"><button v-for="(option,i) in currentQuestion.options" :key="i" class="option" :class="{'arabic-option':activeLesson.subjectName==='Bahasa Arab', chosen:selectedOption===i, right:feedback && option===feedback.correctOption, wrong:feedback && i===selectedOption && !feedback.correct}" :disabled="isAnswered" @click="selectedOption=i"><span class="option-letter">{{ ['A','B','C','D'][i] || i+1 }}</span><span :dir="activeLesson.subjectName==='Bahasa Arab' ? 'rtl' : 'auto'">{{ option }}</span><span v-if="feedback && (i===selectedOption || option===feedback.correctOption)" class="option-status">{{ option===feedback.correctOption ? '✓' : '✗' }}</span></button></div>
+              <div v-if="feedback" class="feedback" :class="feedback.correct?'feedback-good':'feedback-try'"><b>{{ feedback.correct ? 'Hebat! Jawabanmu benar 🎉' : 'Belum tepat, tidak apa-apa! 💪' }}</b><p v-if="isEssay" class="method-title">Jawaban yang benar: {{ feedback.correctOption }}. Bandingkan langkahmu dengan pembahasan ini.</p><template v-if="feedback.longMethod"><div v-if="feedback.quickMethod" class="method-tabs"><button v-for="tab in methodTabs" :key="tab.id" type="button" class="method-tab" :class="{active:activeMethod===tab.id}" :aria-pressed="activeMethod===tab.id" @click="selectedMethod=tab.id">{{ tab.label }}</button></div><p v-else class="method-title">Cara panjang</p><p class="method-steps">{{ activeMethod==='quick' ? feedback.quickMethod : feedback.longMethod }}</p></template><p v-else>{{ feedback.explanation }}</p></div>
+              <div v-if="isAnswered && !reviewMode" class="answer-locked"><p>Jawabanmu sudah tersimpan. Pembahasan muncul setelah semua soal dijawab.</p><button type="button" class="secondary-btn" @click="goToFirstUnanswered">Lanjut ke soal berikutnya →</button></div>
+              <button v-else-if="!isAnswered" class="primary-btn" :disabled="!canCheck || offlineMode" @click="checkAnswer">{{ offlineMode ? 'Menunggu koneksi untuk memeriksa' : 'Periksa jawaban' }} <span v-if="!offlineMode">→</span></button>
             </div>
-            <div v-else-if="finished" class="result-card"><div class="result-star">🏆</div><h2>Latihan selesai!</h2><div class="result-counts"><div><b>{{ score }}</b><span>Benar</span></div><div><b>{{ questions.length-score }}</b><span>Salah</span></div></div><p>{{ score===questions.length ? 'Sempurna! Kamu hebat sekali.' : score/questions.length >= .7 ? 'Kamu sudah memahami banyak hal. Teruskan langkah baikmu!' : 'Tidak apa-apa, belajar perlu waktu. Ayo coba sesi singkat dan pelajari lagi petunjuknya.' }}</p><p v-if="saving" class="muted">Menyimpan hasil...</p><button class="primary-btn" @click="reviewAnswers">Tinjau jawaban</button><button class="secondary-btn" @click="selectPractice(activeLesson, score/questions.length < .7 ? 5 : 10)">{{ score/questions.length < .7 ? 'Latihan singkat 5 soal' : 'Latihan lagi 10 soal' }} ↻</button><button class="secondary-btn" @click="home">Pilih pelajaran lain</button></div>
-            <div v-else class="empty-state">Materi ini belum memiliki latihan. Coba pelajaran lainnya, ya!</div>
+            <div v-else-if="finished" class="result-card"><div class="result-star">🏆</div><h2>Latihan selesai!</h2><div class="result-counts"><div><b>{{ score }}</b><span>Benar</span></div><div><b>{{ questions.length-score }}</b><span>Salah</span></div></div><p>{{ score===questions.length ? 'Sempurna! Kamu hebat sekali.' : score/questions.length >= .7 ? 'Kamu sudah memahami banyak hal. Teruskan langkah baikmu!' : 'Tidak apa-apa, belajar perlu waktu. Ayo coba sesi singkat dan pelajari lagi petunjuknya.' }}</p><p v-if="saving" class="muted">Menyimpan hasil...</p><button class="primary-btn" @click="reviewAnswers">Tinjau jawaban dan pembahasan</button><button class="secondary-btn" @click="selectPractice(activeLesson, score/questions.length < .7 ? 5 : 10)">{{ score/questions.length < .7 ? 'Latihan singkat 5 soal' : 'Latihan lagi' }} ↻</button><button class="secondary-btn" @click="home">Pilih pelajaran lain</button></div>
+            <div v-else class="empty-state">{{ questionsNote || 'Materi ini belum memiliki latihan. Coba pelajaran lainnya, ya!' }}</div>
           </section>
         </template>
         <template v-else-if="extracurricularView">
@@ -646,7 +671,7 @@ onUnmounted(() => { window.clearInterval(philosophyTimer); window.removeEventLis
           <footer class="footer">Dibuat dengan 💛 untuk anak Indonesia <span>Kenangan yang Indah tentang belajar!</span></footer>
         </template>
       </div>
-      <div v-if="printPreview" class="print-preview-backdrop" @click.self="closePrintPreview"><section class="print-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="print-title"><header class="print-preview-toolbar"><div><b>Pratinjau lembar soal</b><small>{{ printPreview.lesson.grade }} · {{ printPreview.lesson.subjectName }}</small></div><button class="print-close" @click="closePrintPreview">Tutup</button><button class="primary-btn print-action" :disabled="printLoading || !printPreview.questions.length" @click="printQuestions">Cetak / Simpan PDF</button></header><div v-if="printLoading" class="loading"><div class="spinner"></div><h3>Menyiapkan pratinjau...</h3></div><p v-else-if="printError" class="print-error">{{ printError }}</p><article v-else id="print-sheet" class="print-sheet"><h1 id="print-title">{{ printPreview.lesson.title }}</h1><p class="print-subtitle">{{ printPreview.lesson.subjectName }} · {{ printPreview.lesson.grade }}</p><div class="student-fields"><span>Nama: ______________________________</span><span>Tanggal: ______________</span><span>Nilai: ______ / {{ printPreview.questions.length }}</span></div><ol v-if="printPreview.questions.length" class="print-question-list"><li v-for="(question,index) in printPreview.questions" :key="index"><p>{{ question.prompt }}</p><ul class="print-options"><li v-for="(option,optIndex) in question.options" :key="optIndex"><span>{{ ['A','B','C','D'][optIndex] || optIndex+1 }}.</span> {{ option }}</li></ul><div class="answer-space"></div></li></ol><p v-else class="empty-state">Bab ini belum memiliki soal yang dapat dicetak.</p></article></section></div>
+      <div v-if="printPreview" class="print-preview-backdrop" @click.self="closePrintPreview"><section class="print-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="print-title"><header class="print-preview-toolbar"><div><b>Pratinjau lembar soal</b><small>{{ printPreview.lesson.grade }} · {{ printPreview.lesson.subjectName }}</small></div><button class="print-close" @click="closePrintPreview">Tutup</button><button class="primary-btn print-action" :disabled="printLoading || !printPreview.questions.length" @click="printQuestions">Cetak / Simpan PDF</button></header><div v-if="printLoading" class="loading"><div class="spinner"></div><h3>Menyiapkan pratinjau...</h3></div><p v-else-if="printError" class="print-error">{{ printError }}</p><article v-else id="print-sheet" class="print-sheet"><h1 id="print-title">{{ printPreview.lesson.title }}</h1><p class="print-subtitle">{{ printPreview.lesson.subjectName }} · {{ printPreview.lesson.grade }}</p><div class="student-fields"><span>Nama: ______________________________</span><span>Tanggal: ______________</span><span>Nilai: ______ / {{ printPreview.questions.length }}</span></div><ol v-if="printPreview.questions.length" class="print-question-list"><li v-for="(question,index) in printPreview.questions" :key="index"><p>{{ question.prompt }}</p><ul class="print-options"><li v-for="(option,optIndex) in question.options" :key="optIndex"><span>{{ ['A','B','C','D'][optIndex] || optIndex+1 }}.</span> {{ option }}</li></ul><div class="answer-space" :class="{'essay-answer-space':question.type==='ESSAY'}"></div></li></ol><p v-else class="empty-state">Bab ini belum memiliki soal yang dapat dicetak.</p></article></section></div>
       <div v-if="donationOpen" class="donation-modal-backdrop" @click.self="donationOpen=false"><section class="donation-modal" role="dialog" aria-modal="true" aria-labelledby="donation-title"><button class="donation-modal-close" aria-label="Tutup" @click="donationOpen=false">×</button><div class="donation-heart">♡</div><div class="eyebrow">DUKUNG RUANG BELAJAR</div><h2 id="donation-title">Dukung Teman Belajar</h2><p>Terima kasih sudah membantu menjaga ruang belajar ini tetap bertumbuh.</p><img src="/QRIS_AR.jpeg" alt="QRIS donasi Teman Belajar" class="donation-qr-image"><small>Buka aplikasi pembayaran yang mendukung QRIS, lalu pindai kode ini.</small><button class="secondary-btn" @click="donationOpen=false">Tutup</button></section></div>
     </main>
   </div>

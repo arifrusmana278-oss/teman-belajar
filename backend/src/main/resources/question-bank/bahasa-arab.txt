@@ -1,0 +1,409 @@
+# Bahasa Arab kelas 1–6 (acuan madrasah; kelas V mengikuti tema buku Bahasa Arab MI KSKK). Pilihan jawaban ditulis
+# dalam huruf Arab berharakat. Satu kata tidak dipakai di dua bab pada kelas yang sama. Perlu ditelaah guru.
+
+== Bahasa Arab | 1 | Salam dan perkenalan
+%prompt Ungkapan bahasa Arab untuk ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ assalamu'alaikum | السَّلَامُ عَلَيْكُمْ
+~ menjawab salam | وَعَلَيْكُمُ السَّلَامُ
+~ selamat pagi | صَبَاحُ الْخَيْرِ
+~ selamat sore | مَسَاءُ الْخَيْرِ
+~ terima kasih | شُكْرًا
+~ sama-sama | عَفْوًا
+~ selamat datang | مَرْحَبًا
+~ sampai jumpa | مَعَ السَّلَامَةِ
+~ siapa namamu? | مَا اسْمُكَ؟
+~ namaku | اِسْمِي
+~ saya | أَنَا
+
+== Bahasa Arab | 1 | Angka dan warna
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ satu | وَاحِدٌ
+~ dua | اِثْنَانِ
+~ tiga | ثَلَاثَةٌ
+~ empat | أَرْبَعَةٌ
+~ lima | خَمْسَةٌ
+%prompt Warna ‘{0}’ dalam bahasa Arab adalah ...
+%explain Warna ‘{0}’ dalam bahasa Arab: {1}
+~ merah | أَحْمَرُ
+~ biru | أَزْرَقُ
+~ hijau | أَخْضَرُ
+~ kuning | أَصْفَرُ
+~ putih | أَبْيَضُ
+~ hitam | أَسْوَدُ
+
+== Bahasa Arab | 1 | Benda di kelas
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ buku | كِتَابٌ
+~ pena | قَلَمٌ
+~ pensil | قَلَمُ رَصَاصٍ
+~ meja tulis | مَكْتَبٌ
+~ kursi | كُرْسِيٌّ
+~ papan tulis | سَبُّوْرَةٌ
+~ pintu | بَابٌ
+~ jendela | نَافِذَةٌ
+~ tas | حَقِيْبَةٌ
+~ penghapus | مِمْسَحَةٌ
+~ penggaris | مِسْطَرَةٌ
+
+== Bahasa Arab | 1 | Keluarga
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ ayah | أَبٌ
+~ ibu | أُمٌّ
+~ kakek | جَدٌّ
+~ nenek | جَدَّةٌ
+~ saudara laki-laki | أَخٌ
+~ saudara perempuan | أُخْتٌ
+~ paman (saudara ayah) | عَمٌّ
+~ bibi (saudara ayah) | عَمَّةٌ
+~ anak laki-laki | اِبْنٌ
+~ anak perempuan | بِنْتٌ
+~ keluarga | أُسْرَةٌ
+
+== Bahasa Arab | 2 | Salam dan identitas
+%prompt Ungkapan bahasa Arab untuk ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ dari mana kamu? | مِنْ أَيْنَ أَنْتَ؟
+~ di mana kamu tinggal? | أَيْنَ تَسْكُنُ؟
+~ bagaimana kabarmu? | كَيْفَ حَالُكَ؟
+~ baik, alhamdulillah | بِخَيْرٍ وَالْحَمْدُ لِلّٰهِ
+~ berapa umurmu? | كَمْ عُمْرُكَ؟
+~ saya murid laki-laki | أَنَا تِلْمِيْذٌ
+~ saya murid perempuan | أَنَا تِلْمِيْذَةٌ
+%prompt Kata ganti ‘{0}’ dalam bahasa Arab adalah ...
+%explain Kata ganti ‘{0}’ dalam bahasa Arab: {1}
+~ kamu (laki-laki) | أَنْتَ
+~ kamu (perempuan) | أَنْتِ
+~ dia (laki-laki) | هُوَ
+~ dia (perempuan) | هِيَ
+
+== Bahasa Arab | 2 | Angka dan benda sekolah
+%prompt Bilangan ‘{0}’ dalam bahasa Arab adalah ...
+%explain Bilangan ‘{0}’ dalam bahasa Arab: {1}
+~ enam | سِتَّةٌ
+~ tujuh | سَبْعَةٌ
+~ delapan | ثَمَانِيَةٌ
+~ sembilan | تِسْعَةٌ
+~ sepuluh | عَشَرَةٌ
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ sekolah | مَدْرَسَةٌ
+~ kelas | فَصْلٌ
+~ guru laki-laki | مُدَرِّسٌ
+~ guru perempuan | مُدَرِّسَةٌ
+~ buku tulis | كُرَّاسَةٌ
+~ perpustakaan | مَكْتَبَةٌ
+
+== Bahasa Arab | 2 | Keluarga
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ paman (saudara ibu) | خَالٌ
+~ bibi (saudara ibu) | خَالَةٌ
+~ suami | زَوْجٌ
+~ istri | زَوْجَةٌ
+~ cucu | حَفِيْدٌ
+~ orang tua laki-laki (bapak) | وَالِدٌ
+~ orang tua perempuan (ibu) | وَالِدَةٌ
+~ kedua orang tua | وَالِدَانِ
+~ anak kecil | طِفْلٌ
+~ rumah | بَيْتٌ
+
+== Bahasa Arab | 2 | Warna dan sifat
+%prompt Kata sifat ‘{0}’ dalam bahasa Arab adalah ...
+%explain Kata sifat ‘{0}’ dalam bahasa Arab: {1}
+~ besar | كَبِيْرٌ
+~ kecil | صَغِيْرٌ
+~ panjang | طَوِيْلٌ
+~ pendek | قَصِيْرٌ
+~ baru | جَدِيْدٌ
+~ lama | قَدِيْمٌ
+~ bersih | نَظِيْفٌ
+~ kotor | وَسِخٌ
+~ indah | جَمِيْلٌ
+%prompt Warna ‘{0}’ dalam bahasa Arab adalah ...
+%explain Warna ‘{0}’ dalam bahasa Arab: {1}
+~ cokelat | بُنِّيٌّ
+~ ungu | بَنَفْسَجِيٌّ
+~ abu-abu | رَمَادِيٌّ
+~ jingga | بُرْتُقَالِيٌّ
+
+== Bahasa Arab | 3 | Salam dan ungkapan
+%prompt Ungkapan bahasa Arab untuk ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ saya minta maaf | أَنَا آسِفٌ
+~ tolong (jika berkenan) | مِنْ فَضْلِكَ
+~ selamat tidur | تُصْبِحُ عَلَى خَيْرٍ
+~ jawaban selamat pagi | صَبَاحُ النُّوْرِ
+~ silakan | تَفَضَّلْ
+~ jika Allah menghendaki | إِنْ شَاءَ اللّٰهُ
+~ segala puji bagi Allah | اَلْحَمْدُ لِلّٰهِ
+~ terima kasih banyak | شُكْرًا جَزِيْلًا
+~ ya | نَعَمْ
+~ tidak | لَا
+~ bagus | جَيِّدٌ
+
+== Bahasa Arab | 3 | Angka dan waktu
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ jam | سَاعَةٌ
+~ hari | يَوْمٌ
+~ pekan | أُسْبُوْعٌ
+~ bulan (kalender) | شَهْرٌ
+~ tahun | سَنَةٌ
+~ hari ini | اَلْيَوْمَ
+~ besok | غَدًا
+~ kemarin | أَمْسِ
+~ pagi | صَبَاحٌ
+~ malam | لَيْلٌ
+~ siang | نَهَارٌ
+~ sebelas | أَحَدَ عَشَرَ
+
+== Bahasa Arab | 3 | Sekolah dan keluarga
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ kepala sekolah | مُدِيْرُ الْمَدْرَسَةِ
+~ halaman sekolah | سَاحَةُ الْمَدْرَسَةِ
+~ teman | صَدِيْقٌ
+~ pelajaran | دَرْسٌ
+~ ujian | اِمْتِحَانٌ
+~ lapangan bermain | مَلْعَبٌ
+~ kamar mandi | حَمَّامٌ
+~ masjid | مَسْجِدٌ
+~ ayahku | أَبِيْ
+~ ibuku | أُمِّيْ
+
+== Bahasa Arab | 3 | Kegiatan sehari-hari
+%prompt Kata kerja bahasa Arab yang berarti ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ dia (lk) telah bangun | اِسْتَيْقَظَ
+~ dia (lk) telah mandi | اِغْتَسَلَ
+~ dia (lk) telah makan | أَكَلَ
+~ dia (lk) telah minum | شَرِبَ
+~ dia (lk) telah pergi | ذَهَبَ
+~ dia (lk) telah belajar | دَرَسَ
+~ dia (lk) telah membaca | قَرَأَ
+~ dia (lk) telah menulis | كَتَبَ
+~ dia (lk) telah tidur | نَامَ
+~ dia (lk) telah bermain | لَعِبَ
+~ dia (lk) telah kembali | رَجَعَ
+
+== Bahasa Arab | 4 | Keluarga
+%prompt Bahasa Arab dari ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}. Akhiran ـِيْ berarti ‘-ku’.
+~ keluargaku | أُسْرَتِيْ
+~ saudara laki-lakiku | أَخِيْ
+~ saudara perempuanku | أُخْتِيْ
+~ kakekku | جَدِّيْ
+~ nenekku | جَدَّتِيْ
+~ pamanku | عَمِّيْ
+~ rumahku | بَيْتِيْ
+%prompt Kata tunjuk ‘{0}’ dalam bahasa Arab adalah ...
+%explain Kata tunjuk ‘{0}’: {1}
+~ ini (untuk laki-laki) | هٰذَا
+~ ini (untuk perempuan) | هٰذِهِ
+~ itu (untuk laki-laki) | ذٰلِكَ
+~ itu (untuk perempuan) | تِلْكَ
+
+== Bahasa Arab | 4 | Sekolah
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ matematika | اَلرِّيَاضِيَّاتُ
+~ bahasa Arab | اَللُّغَةُ الْعَرَبِيَّةُ
+~ ilmu pengetahuan alam | اَلْعُلُوْمُ
+~ olahraga | اَلرِّيَاضَةُ
+~ istirahat | اِسْتِرَاحَةٌ
+~ bel | جَرَسٌ
+~ jadwal pelajaran | جَدْوَلُ الدُّرُوْسِ
+~ ruang guru | غُرْفَةُ الْمُدَرِّسِيْنَ
+~ pekerjaan rumah | وَاجِبٌ مَنْزِلِيٌّ
+~ seragam | زِيٌّ مَدْرَسِيٌّ
+
+== Bahasa Arab | 4 | Rumah dan lingkungan
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ dapur | مَطْبَخٌ
+~ kebun | حَدِيْقَةٌ
+~ atap | سَقْفٌ
+~ dinding | جِدَارٌ
+~ lemari | خِزَانَةٌ
+~ tempat tidur | سَرِيْرٌ
+~ jalan raya | شَارِعٌ
+~ pasar | سُوْقٌ
+~ tetangga | جَارٌ
+~ desa | قَرْيَةٌ
+~ kamar | غُرْفَةٌ
+
+== Bahasa Arab | 4 | Kegiatan sehari-hari
+%prompt Kata kerja bahasa Arab untuk ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ aku makan | آكُلُ
+~ aku minum | أَشْرَبُ
+~ aku pergi | أَذْهَبُ
+~ aku belajar | أَدْرُسُ
+~ aku membaca | أَقْرَأُ
+~ aku menulis | أَكْتُبُ
+~ aku tidur | أَنَامُ
+~ aku bangun | أَسْتَيْقِظُ
+~ aku salat | أُصَلِّيْ
+~ aku berwudu | أَتَوَضَّأُ
+~ aku menyapu | أَكْنُسُ
+
+== Bahasa Arab | 5 | Anggota Tubuh
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ kepala | رَأْسٌ
+~ mata | عَيْنٌ
+~ telinga | أُذُنٌ
+~ hidung | أَنْفٌ
+~ mulut | فَمٌ
+~ tangan | يَدٌ
+~ kaki | رِجْلٌ
+~ rambut | شَعْرٌ
+~ gigi | سِنٌّ
+~ wajah | وَجْهٌ
+~ lidah | لِسَانٌ
+
+== Bahasa Arab | 5 | Profesi
+%prompt Profesi ‘{0}’ dalam bahasa Arab adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ dokter | طَبِيْبٌ
+~ perawat perempuan | مُمَرِّضَةٌ
+~ petani | فَلَّاحٌ
+~ pedagang | تَاجِرٌ
+~ polisi | شُرْطِيٌّ
+~ sopir | سَائِقٌ
+~ insinyur | مُهَنْدِسٌ
+~ nelayan | صَيَّادٌ
+~ tukang roti | خَبَّازٌ
+~ pilot | طَيَّارٌ
+~ penjahit | خَيَّاطٌ
+
+== Bahasa Arab | 5 | Kebun Binatang
+%prompt Hewan ‘{0}’ dalam bahasa Arab adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ gajah | فِيْلٌ
+~ singa | أَسَدٌ
+~ harimau | نَمِرٌ
+~ kera | قِرْدٌ
+~ unta | جَمَلٌ
+~ jerapah | زَرَافَةٌ
+~ burung | طَائِرٌ
+~ ular | ثُعْبَانٌ
+~ kijang | غَزَالٌ
+~ beruang | دُبٌّ
+~ kebun binatang | حَدِيْقَةُ الْحَيَوَانَاتِ
+
+== Bahasa Arab | 5 | Di Ruang Tamu dan Ruang Belajar
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ ruang tamu | غُرْفَةُ الضُّيُوْفِ
+~ ruang belajar | غُرْفَةُ الْمُذَاكَرَةِ
+~ sofa | أَرِيْكَةٌ
+~ karpet | سَجَّادٌ
+~ lampu | مِصْبَاحٌ
+~ televisi | تِلْفَازٌ
+~ rak buku | رَفُّ الْكُتُبِ
+~ meja belajar | مَكْتَبٌ
+~ vas bunga | مَزْهَرِيَّةٌ
+~ tamu | ضَيْفٌ
+~ jam dinding | سَاعَةُ الْحَائِطِ
+
+== Bahasa Arab | 5 | Di Laboratorium dan Perpustakaan
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ laboratorium | مُخْتَبَرٌ
+~ perpustakaan | مَكْتَبَةٌ
+~ komputer | حَاسُوْبٌ
+~ mikroskop | مِجْهَرٌ
+~ petugas perpustakaan | أَمِيْنُ الْمَكْتَبَةِ
+~ majalah | مَجَلَّةٌ
+~ koran | جَرِيْدَةٌ
+~ kamus | قَامُوْسٌ
+~ cerita | قِصَّةٌ
+~ rak | رَفٌّ
+~ buku | كِتَابٌ
+
+== Bahasa Arab | 5 | Di Kantin
+%prompt Makanan atau minuman ‘{0}’ dalam bahasa Arab adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ nasi | أَرُزٌّ
+~ roti | خُبْزٌ
+~ susu | حَلِيْبٌ
+~ teh | شَايٌ
+~ air | مَاءٌ
+~ telur | بَيْضٌ
+~ ikan | سَمَكٌ
+~ daging | لَحْمٌ
+~ pisang | مَوْزٌ
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ kantin | مَقْصَفٌ
+~ harga | ثَمَنٌ
+~ penjual | بَائِعٌ
+~ pembeli | مُشْتَرٍ
+
+== Bahasa Arab | 6 | Kegiatan dan waktu
+%prompt Ungkapan bahasa Arab untuk ‘{0}’ adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ jam berapa sekarang? | كَمِ السَّاعَةُ الْآنَ؟
+~ pukul enam | اَلسَّاعَةُ السَّادِسَةُ
+~ pukul tujuh | اَلسَّاعَةُ السَّابِعَةُ
+~ setengah | نِصْفٌ
+~ seperempat | رُبْعٌ
+~ aku pergi ke sekolah | أَذْهَبُ إِلَى الْمَدْرَسَةِ
+~ aku pulang dari sekolah | أَرْجِعُ مِنَ الْمَدْرَسَةِ
+~ sore hari | مَسَاءٌ
+~ waktu fajar | فَجْرٌ
+~ setiap hari | كُلَّ يَوْمٍ
+~ sekarang | اَلْآنَ
+
+== Bahasa Arab | 6 | Kesehatan
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ sakit | مَرِيْضٌ
+~ sehat | صَحِيْحٌ
+~ obat | دَوَاءٌ
+~ rumah sakit | مُسْتَشْفًى
+~ demam | حُمًّى
+~ batuk | سُعَالٌ
+~ sakit kepala | صُدَاعٌ
+~ dokter | طَبِيْبٌ
+~ istirahat | رَاحَةٌ
+~ buah-buahan | فَاكِهَةٌ
+~ olahraga | رِيَاضَةٌ
+
+== Bahasa Arab | 6 | Lingkungan
+%prompt Apa bahasa Arab dari ‘{0}’?
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ sungai | نَهْرٌ
+~ laut | بَحْرٌ
+~ gunung | جَبَلٌ
+~ pohon | شَجَرَةٌ
+~ bunga | زَهْرَةٌ
+~ sampah | قُمَامَةٌ
+~ udara | هَوَاءٌ
+~ matahari | شَمْسٌ
+~ bulan (di langit) | قَمَرٌ
+~ hujan | مَطَرٌ
+~ hutan | غَابَةٌ
+
+== Bahasa Arab | 6 | Membaca percakapan sederhana
+%prompt Kata tanya ‘{0}’ dalam bahasa Arab adalah ...
+%explain Kata tanya ‘{0}’: {1}
+~ apa | مَا
+~ siapa | مَنْ
+~ di mana | أَيْنَ
+~ kapan | مَتَى
+~ mengapa | لِمَاذَا
+~ bagaimana | كَيْفَ
+~ berapa | كَمْ
+~ apakah | هَلْ
+%prompt Arti percakapan ‘{0}’ dalam bahasa Arab adalah ...
+%explain ‘{0}’ dalam bahasa Arab: {1}
+~ ke mana kamu pergi? | إِلَى أَيْنَ تَذْهَبُ؟
+~ apa ini? | مَا هٰذَا؟
+~ siapa ini? | مَنْ هٰذَا؟
+~ dengan siapa kamu pergi? | مَعَ مَنْ تَذْهَبُ؟

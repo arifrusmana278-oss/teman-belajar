@@ -1,0 +1,428 @@
+# Bahasa Inggris SD kelas 1–6. Kosakata dan ungkapan dipilih per bab; tidak ada kata yang dipakai dua bab dalam satu kelas.
+
+== Bahasa Inggris | 1 | Greetings and classroom language
+It is seven o'clock in the morning. You meet your teacher. You say ... | Good morning | Good night | Good evening | Goodbye | We say ‘Good morning’ before noon.
+Your friend gives you a pencil. You say ... | Thank you | Good night | Hello, sorry | See you tomorrow | We say ‘Thank you’ when someone helps us.
+School is over and you go home. You say to your friend ... | Goodbye | Good morning | Thank you | Excuse me | We say ‘Goodbye’ when we leave.
+%prompt Your teacher says ‘{0}’. What should you do?
+%explain ‘{0}’ means ‘{1}’.
+~ Stand up | Berdiri
+~ Sit down | Duduk
+~ Open your book | Buka bukumu
+~ Close the door | Tutup pintunya
+~ Listen | Dengarkan
+~ Be quiet | Harap tenang
+~ Raise your hand | Angkat tanganmu
+
+== Bahasa Inggris | 1 | My friends and family
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ ayah | father
+~ ibu | mother
+~ kakak atau adik laki-laki | brother
+~ kakak atau adik perempuan | sister
+~ kakek | grandfather
+~ nenek | grandmother
+~ bayi | baby
+~ teman | friend
+~ keluarga | family
+~ paman | uncle
+~ bibi | aunt
+
+== Bahasa Inggris | 1 | Numbers, colors, and things
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ satu | one
+~ dua | two
+~ tiga | three
+~ empat | four
+~ lima | five
+~ merah | red
+~ biru | blue
+~ kuning | yellow
+~ hijau | green
+~ buku | book
+~ pensil | pencil
+~ tas | bag
+
+== Bahasa Inggris | 1 | My daily activities
+%prompt Which English word means ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ makan | eat
+~ minum | drink
+~ tidur | sleep
+~ bangun | wake up
+~ mandi | take a bath
+~ bermain | play
+~ belajar | study
+~ menggambar | draw
+~ bernyanyi | sing
+~ mencuci tangan | wash hands
+~ menyikat gigi | brush teeth
+
+== Bahasa Inggris | 2 | My school
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ sekolah | school
+~ guru | teacher
+~ murid | student
+~ kelas | classroom
+~ perpustakaan | library
+~ kantin | canteen
+~ lapangan | field
+~ toilet | toilet
+~ kepala sekolah | principal
+~ gerbang | gate
+~ halaman | yard
+
+== Bahasa Inggris | 2 | My family and friends
+%prompt Choose the Indonesian meaning of ‘{0}’.
+%explain ‘{0}’ means ‘{1}’.
+~ parents | orang tua
+~ cousin | sepupu
+~ son | anak laki-laki
+~ daughter | anak perempuan
+~ neighbour | tetangga
+~ best friend | sahabat
+~ twins | anak kembar
+~ husband | suami
+~ wife | istri
+~ grandparents | kakek dan nenek
+This is my father's brother. He is my ... | uncle | aunt | cousin | sister | Your father's or mother's brother is your uncle.
+
+== Bahasa Inggris | 2 | Food and drinks
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ nasi | rice
+~ roti | bread
+~ telur | egg
+~ ikan | fish
+~ ayam | chicken
+~ susu | milk
+~ air | water
+~ jus | juice
+~ teh | tea
+~ sayuran | vegetables
+~ buah | fruit
+~ pisang | banana
+
+== Bahasa Inggris | 2 | Daily routines
+%prompt Which English word means ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ pagi | morning
+~ siang | afternoon
+~ malam | night
+~ sarapan | breakfast
+~ makan siang | lunch
+~ makan malam | dinner
+~ pergi ke sekolah | go to school
+~ pulang | go home
+~ mengerjakan PR | do homework
+~ tidur siang | take a nap
+~ berpakaian | get dressed
+
+== Bahasa Inggris | 3 | My Self
+What is your name? The correct answer is ... | My name is Dina. | I am nine. | I am fine. | I live in Bogor. | We answer ‘What is your name?’ with ‘My name is ...’.
+How old are you? The correct answer is ... | I am eight years old. | My name is Rudi. | I am happy. | I like apples. | We answer ‘How old are you?’ with ‘I am ... years old’.
+How are you? The correct answer is ... | I am fine, thank you. | I am ten years old. | My name is Sari. | Goodbye. | We answer ‘How are you?’ with ‘I am fine’.
+Where do you live? The correct answer is ... | I live in Bandung. | I am fine. | My name is Ali. | I like blue. | We answer ‘Where do you live?’ with ‘I live in ...’.
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ nama | name
+~ umur | age
+~ hobi | hobby
+~ tinggi | tall
+~ pendek | short
+~ rambut | hair
+~ mata | eyes
+~ senang | happy
+
+== Bahasa Inggris | 3 | My Family
+%prompt In English, ‘{0}’ is called ...
+%explain ‘{0}’ is ‘{1}’ in English.
+~ kakek | grandfather
+~ nenek | grandmother
+~ paman | uncle
+~ bibi | aunt
+~ sepupu | cousin
+~ keponakan laki-laki | nephew
+~ keponakan perempuan | niece
+Rina is a girl. She is my mother's daughter. Rina is my ... | sister | brother | uncle | father | A daughter of your parents is your sister.
+Budi is a boy. He is my mother's son. Budi is my ... | brother | sister | aunt | mother | A son of your parents is your brother.
+‘He is my father.’ The word ‘he’ is used for ... | a boy or a man | a girl or a woman | many people | a thing | We use ‘he’ for a male person.
+‘She is my mother.’ The word ‘she’ is used for ... | a girl or a woman | a boy or a man | an animal only | many people | We use ‘she’ for a female person.
+
+== Bahasa Inggris | 3 | My Family Time
+%prompt Which English phrase means ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ menonton televisi | watch TV
+~ memasak bersama | cook together
+~ piknik | have a picnic
+~ bersepeda | ride a bike
+~ berkebun | do gardening
+~ membaca cerita | read a story
+~ jalan-jalan | go for a walk
+~ makan bersama | eat together
+~ berenang | swim
+~ bermain bola | play football
+
+== Bahasa Inggris | 3 | My School
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ ruang guru | teachers' room
+~ ruang UKS | school clinic
+~ taman sekolah | school garden
+~ masjid sekolah | school mosque
+~ aula | hall
+~ laboratorium | laboratory
+~ tempat parkir | parking area
+~ ruang musik | music room
+~ ruang komputer | computer room
+~ upacara bendera | flag ceremony
+
+== Bahasa Inggris | 3 | My Classroom
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ meja | table
+~ kursi | chair
+~ papan tulis | whiteboard
+~ penghapus | eraser
+~ penggaris | ruler
+~ spidol | marker
+~ jam dinding | clock
+~ jendela | window
+~ pintu | door
+~ tempat sampah | trash bin
+~ peta | map
+
+== Bahasa Inggris | 3 | My Teachers
+%prompt Choose the Indonesian meaning of ‘{0}’.
+%explain ‘{0}’ means ‘{1}’.
+~ kind | baik hati
+~ smart | pintar
+~ patient | sabar
+~ friendly | ramah
+~ funny | lucu
+~ strict | tegas
+~ helpful | suka membantu
+Mrs. Ani teaches English. She is an ... teacher. | English | Math | Art | Music | The subject she teaches is English.
+Mr. Joko teaches sport. He is a ... teacher. | PE | science | English | music | PE stands for Physical Education.
+‘Good morning, Ma'am.’ The word ‘Ma'am’ is used to greet ... | a female teacher | a male teacher | a friend | a baby | Students say ‘Sir’ to a male teacher and ‘Ma'am’ to a female teacher.
+
+== Bahasa Inggris | 4 | My Morning Routine
+I wake up at six o'clock. In Indonesian, ‘six o'clock’ is ... | pukul enam | pukul tujuh | pukul setengah enam | pukul dua belas | ‘O'clock’ shows the exact hour.
+Choose the correct order of a morning routine. | wake up – take a bath – have breakfast – go to school | go to school – wake up – take a bath | have breakfast – wake up – go to bed | take a bath – go to bed – wake up | We wake up first, then get ready and leave.
+‘She ... her teeth every morning.’ The correct word is ... | brushes | brush | brushing | brushed yesterday | With he/she/it in the simple present, the verb gets -s or -es.
+‘I ... breakfast at half past six.’ The correct word is ... | have | has | having | to have | With ‘I’, we use ‘have’.
+%prompt What is the English for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ menyisir rambut | comb my hair
+~ merapikan tempat tidur | make my bed
+~ memakai seragam | put on my uniform
+~ memakai sepatu | put on my shoes
+~ berpamitan | say goodbye
+~ setengah tujuh | half past six
+~ berangkat | leave home
+
+== Bahasa Inggris | 4 | Meal Time
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ piring | plate
+~ sendok | spoon
+~ garpu | fork
+~ gelas | glass
+~ mangkuk | bowl
+~ sup | soup
+~ mi | noodles
+~ kue | cake
+~ lapar | hungry
+~ haus | thirsty
+~ lezat | delicious
+‘Can I have some water, please?’ This sentence is used to ... | ask for water politely | say goodbye | describe water | refuse water | ‘Please’ makes a request polite.
+
+== Bahasa Inggris | 4 | My Toys
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ boneka | doll
+~ bola | ball
+~ layang-layang | kite
+~ mobil-mobilan | toy car
+~ robot | robot
+~ kelereng | marbles
+~ balon | balloon
+~ yoyo | yo-yo
+~ teka-teki susun | puzzle
+~ gasing | spinning top
+‘I have two ...’ The correct word is ... | dolls | doll | a doll | dolles | Use plural -s for more than one.
+‘Whose ball is this?’ ‘It is ... ball.’ The correct word is ... | my | I | me | mine is | ‘My’ shows that something belongs to me.
+
+== Bahasa Inggris | 4 | My School Activities
+%prompt Which English phrase means ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ membaca buku | read a book
+~ menulis cerita | write a story
+~ menghitung angka | count numbers
+~ mewarnai gambar | color a picture
+~ menyanyikan lagu | sing a song
+~ menjawab pertanyaan | answer questions
+~ bekerja kelompok | work in groups
+~ piket kelas | clean the classroom
+~ upacara | attend the ceremony
+~ istirahat | have a break
+
+== Bahasa Inggris | 4 | My PE Class
+%prompt What is the English for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ berlari | run
+~ melompat | jump
+~ melempar | throw
+~ menangkap | catch
+~ menendang | kick
+~ pemanasan | warm up
+~ peluit | whistle
+~ lapangan basket | basketball court
+~ bulu tangkis | badminton
+~ senam | gymnastics
+‘Can you jump high?’ ‘Yes, I ...’ | can | do | am | is | Short answers to ‘Can you ...?’ use ‘can’.
+
+== Bahasa Inggris | 4 | My School Days
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ Senin | Monday
+~ Selasa | Tuesday
+~ Rabu | Wednesday
+~ Kamis | Thursday
+~ Jumat | Friday
+~ Sabtu | Saturday
+~ Minggu | Sunday
+~ jadwal pelajaran | timetable
+~ libur | holiday
+The day after Monday is ... | Tuesday | Sunday | Friday | Thursday | Monday, Tuesday, Wednesday, and so on.
+The day before Saturday is ... | Friday | Sunday | Monday | Wednesday | Friday comes before Saturday.
+
+== Bahasa Inggris | 5 | What are you doing?
+‘What are you doing?’ ‘I ... reading a book.’ | am | is | are | do | With ‘I’, the present continuous uses ‘am’ + verb-ing.
+‘She is ... a letter.’ The correct word is ... | writing | write | writes | wrote | Present continuous uses be + verb-ing.
+‘They ... playing football now.’ The correct word is ... | are | is | am | does | With ‘they’, we use ‘are’.
+‘Look! The baby ... sleeping.’ The correct word is ... | is | are | am | do | With one person or thing, we use ‘is’.
+The -ing form of ‘swim’ is ... | swimming | swiming | swimmeing | swims | Double the last consonant: swim → swimming.
+The -ing form of ‘dance’ is ... | dancing | danceing | dancring | dances | Drop the final -e: dance → dancing.
+%prompt Which English phrase means ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ sedang memasak | cooking
+~ sedang menyapu | sweeping
+~ sedang memancing | fishing
+~ sedang menyiram tanaman | watering the plants
+~ sedang menunggu bus | waiting for the bus
+~ sedang memotret | taking a photo
+
+== Bahasa Inggris | 5 | How many pets do you have?
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ kucing | cat
+~ anjing | dog
+~ kelinci | rabbit
+~ burung | bird
+~ ikan hias | goldfish
+~ kura-kura | turtle
+~ hamster | hamster
+~ kandang | cage
+~ ekor | tail
+~ bulu | fur
+‘How many cats do you have?’ ‘I have three ...’ | cats | cat | a cat | catses | Plural nouns usually end in -s.
+The plural of ‘fish’ is ... | fish | fishs | fishes only | fishies | ‘Fish’ usually stays the same in the plural.
+
+== Bahasa Inggris | 5 | Directions and places
+%prompt What is the English for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ belok kiri | turn left
+~ belok kanan | turn right
+~ jalan lurus | go straight
+~ di sebelah | next to
+~ di depan | in front of
+~ di belakang | behind
+~ di antara | between
+~ di seberang | across from
+~ rumah sakit | hospital
+~ kantor pos | post office
+~ stasiun | station
+~ toko roti | bakery
+
+== Bahasa Inggris | 5 | Stories and descriptions
+%prompt Choose the opposite of ‘{0}’.
+%explain The opposite of ‘{0}’ is ‘{1}’.
+~ big | small
+~ long | short
+~ old | young
+~ fast | slow
+~ hot | cold
+~ happy | sad
+~ strong | weak
+~ clean | dirty
+~ heavy | light
+‘Once upon a time’ is usually found at the ... of a story. | beginning | end | title | middle | Many stories start with ‘Once upon a time’.
+‘The kancil is clever.’ The word ‘clever’ describes the kancil as ... | smart | lazy | big | sad | ‘Clever’ means smart or cerdik.
+
+== Bahasa Inggris | 6 | About me
+%prompt Choose the Indonesian meaning of ‘{0}’.
+%explain ‘{0}’ means ‘{1}’.
+~ honest | jujur
+~ brave | berani
+~ shy | pemalu
+~ hardworking | rajin
+~ creative | kreatif
+~ curious | ingin tahu
+~ careful | hati-hati
+~ dream | cita-cita
+‘I want to be a doctor.’ This sentence tells about the speaker's ... | dream job | hobby | address | family | ‘I want to be ...’ tells a dream or goal.
+‘I am good at drawing.’ It means the speaker ... | can draw well | does not like drawing | is drawing now | never draws | ‘Good at’ means pandai.
+‘My favorite subject is science.’ The word ‘favorite’ means ... | kesukaan | tersulit | terbaru | terakhir | Favorite is the one you like most.
+
+== Bahasa Inggris | 6 | I love cooking
+%prompt What is the English word for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ memotong | cut
+~ menggoreng | fry
+~ merebus | boil
+~ mengaduk | stir
+~ menuang | pour
+~ mencampur | mix
+~ wajan | frying pan
+~ panci | pot
+~ resep | recipe
+~ garam | salt
+~ gula | sugar
+In a recipe, the word ‘First’ shows ... | the first step | the last step | the ingredients only | the title | Sequence words help us follow steps.
+‘Add two spoons of sugar.’ ‘Add’ means ... | tambahkan | kurangi | buang | angkat | Add means to put more of something in.
+
+== Bahasa Inggris | 6 | How was your holiday?
+The past form of ‘go’ is ... | went | goed | gone | going | ‘Go’ is an irregular verb: go → went.
+The past form of ‘visit’ is ... | visited | visit | visitted | visiting | Regular verbs add -ed.
+The past form of ‘eat’ is ... | ate | eated | eaten | eating | ‘Eat’ is irregular: eat → ate.
+The past form of ‘see’ is ... | saw | seed | seen | seeing | ‘See’ is irregular: see → saw.
+The past form of ‘swim’ is ... | swam | swimmed | swum | swims | ‘Swim’ is irregular: swim → swam.
+‘Last week I ... to the beach.’ | went | go | goes | going | ‘Last week’ shows past time.
+‘How was your holiday?’ ‘It was ...’ | fun | funs | funning | to fun | ‘It was fun’ describes a past experience.
+‘Yesterday’ means ... | kemarin | besok | hari ini | minggu depan | Yesterday is the day before today.
+%prompt What is the English for ‘{0}’?
+%explain ‘{0}’ in English is ‘{1}’.
+~ pantai | beach
+~ gunung | mountain
+~ kebun binatang | zoo
+~ desa | village
+
+== Bahasa Inggris | 6 | Stories and information
+A story about animals that talk and teaches a lesson is called a ... | fable | recipe | letter | poster | ‘Kancil and the Crocodile’ is a fable.
+The lesson we learn from a story is the ... | moral value | title | author | setting | The moral value is the message of the story.
+The place and time of a story is the ... | setting | character | moral | ending | Setting tells where and when.
+The people or animals in a story are the ... | characters | settings | titles | pages | Characters act in the story.
+A text that tells how to make something is a ... | procedure text | fable | diary | poem | Procedure texts list materials and steps.
+A short message on a notice board is called an ... | announcement | fable | recipe | invitation | An announcement gives information to many people.
+%prompt Choose the Indonesian meaning of ‘{0}’.
+%explain ‘{0}’ means ‘{1}’.
+~ crocodile | buaya
+~ river | sungai
+~ forest | hutan
+~ clever | cerdik
+~ greedy | serakah
+~ king | raja

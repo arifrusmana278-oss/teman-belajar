@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AiQuestionScheduler {
   private static final Logger log = LoggerFactory.getLogger(AiQuestionScheduler.class);
+  private static final Set<String> COMPUTED_SUBJECTS = Set.of("Matematika", "Hitung Cepat", "Mathematics in English");
   private final AiQuestionProperties properties;
   private final AiQuestionGenerator generator;
   private final LessonRepository lessons;
@@ -75,7 +76,7 @@ public class AiQuestionScheduler {
   }
 
   public Map<String, Object> status() {
-    long chapterCount = lessons.findAllWithSubject().stream().filter(lesson -> isCatalogChapter(lesson.getTitle())).count();
+    long chapterCount = lessons.findAllWithSubject().stream().filter(this::isAiEligible).count();
     Instant latestGenerated = questions.findLatestAiQuestionAt();
     AiQuestionSchedulerState state = states.findById(1L).orElse(null);
     Map<String, Object> result = new java.util.LinkedHashMap<>();
@@ -104,7 +105,7 @@ public class AiQuestionScheduler {
     List<Lesson> catalog = lessons.findAllWithSubject();
     for (Lesson lesson : catalog) {
       if (attempted >= limit) break;
-      if (!isCatalogChapter(lesson.getTitle())) continue;
+      if (!isAiEligible(lesson)) continue;
       Instant latestGenerated = questions.findLatestAiQuestionAt(lesson.getId());
       if (latestGenerated != null && latestGenerated.isAfter(now)) continue;
       attempted++;
@@ -155,6 +156,11 @@ public class AiQuestionScheduler {
 
   private String normalize(String value) {
     return value.toLowerCase(Locale.ROOT).replaceAll("[^\\p{L}\\p{N}]", "");
+  }
+
+  /** AI output is only format-checked, so math chapters, whose answers must be computed, stay out of the rotation. */
+  private boolean isAiEligible(Lesson lesson) {
+    return isCatalogChapter(lesson.getTitle()) && !COMPUTED_SUBJECTS.contains(lesson.getSubject().getName());
   }
 
   private boolean isCatalogChapter(String title) {

@@ -1,0 +1,599 @@
+# Bahasa Indonesia SD kelas 1–6. Setiap bab melatih keterampilan berbahasa yang sesuai dengan tema babnya;
+# dalam satu kelas tidak ada soal yang sama di dua bab. Soal orisinal; perlu ditelaah guru.
+
+== Bahasa Indonesia | 1 | Bunyi Apa?
+%prompt Bunyi ‘{0}’ adalah suara ...
+%explain Bunyi ‘{0}’ adalah suara {1}.
+~ meong | kucing
+~ guk guk | anjing
+~ kukuruyuk | ayam jantan
+~ kwek kwek | bebek
+~ embek | kambing
+~ cit cit | tikus
+~ kring kring | bel sepeda
+~ tik tok | jam dinding
+~ ngiung ngiung | ambulans
+~ tok tok tok | pintu diketuk
+~ byur | benda tercebur ke air
+
+== Bahasa Indonesia | 1 | Ayo, Bermain!
+%prompt Huruf awal kata ‘{0}’ adalah ...
+%explain Kata ‘{0}’ diawali huruf {1}.
+~ bola | b
+~ kelereng | k
+~ layang-layang | l
+~ gasing | g
+~ petak umpet | p
+~ engklek | e
+~ yoyo | y
+~ mainan | m
+~ sepeda | s
+~ tali | t
+~ ayunan | a
+
+== Bahasa Indonesia | 1 | Awas Kuman!
+%prompt Suku kata pertama kata ‘{0}’ adalah ...
+%explain Kata ‘{0}’ diawali suku kata {1}.
+~ sabun | sa
+~ kuman | ku
+~ tangan | ta
+~ handuk | han
+~ sikat | si
+~ bersih | ber
+~ gigi | gi
+~ mandi | man
+~ cuci | cu
+~ obat | o
+~ sehat | se
+
+== Bahasa Indonesia | 1 | Aku Bisa!
+Pilih penulisan kalimat yang benar. | Aku bisa mengikat tali sepatu. | aku bisa mengikat tali sepatu. | Aku bisa mengikat tali sepatu | aku Bisa mengikat tali sepatu. | Kalimat ‘Aku bisa mengikat tali sepatu.’ diawali huruf kapital dan diakhiri titik.
+Pilih penulisan kalimat yang benar tentang memakai baju. | Aku bisa memakai baju sendiri. | aku bisa memakai baju sendiri. | Aku bisa memakai baju sendiri | Aku Bisa Memakai Baju Sendiri | Kalimat ‘Aku bisa memakai baju sendiri.’ ditulis dengan huruf kapital di awal dan titik di akhir.
+Pilih penulisan kalimat yang benar tentang merapikan mainan. | Aku bisa merapikan mainan. | aku bisa merapikan mainan. | Aku bisa merapikan mainan | aku bisa merapikan Mainan | Kalimat ‘Aku bisa merapikan mainan.’ ditulis dengan benar.
+Pilih penulisan kalimat yang benar tentang menyiram bunga. | Aku bisa menyiram bunga. | aku bisa menyiram bunga | Aku bisa menyiram bunga | aku bisa menyiram bunga. | Kalimat ‘Aku bisa menyiram bunga.’ ditulis dengan benar.
+Tanda baca di akhir kalimat berita adalah ... | Titik (.) | Tanda tanya (?) | Koma (,) | Tanda seru (!) | Kalimat berita diakhiri tanda titik.
+Huruf pertama pada awal kalimat ditulis dengan huruf ... | Kapital | Kecil | Miring | Tebal | Awal kalimat selalu memakai huruf kapital.
+Kata yang tepat untuk melengkapi ‘Aku bisa ... sepeda.’ adalah ... | naik | makan | tidur | minum | Kalimat yang benar adalah ‘Aku bisa naik sepeda.’
+Kata yang tepat untuk melengkapi ‘Aku bisa ... gigi sendiri.’ adalah ... | menggosok | memakan | menulis | melempar | Kalimat yang benar adalah ‘Aku bisa menggosok gigi sendiri.’
+Kata yang tepat untuk melengkapi ‘Aku bisa ... huruf A sampai Z.’ adalah ... | menulis | menyiram | memasak | mencuci | Kalimat yang benar adalah ‘Aku bisa menulis huruf A sampai Z.’
+Kata yang tepat untuk melengkapi ‘Aku bisa ... piring sendiri.’ adalah ... | mencuci | membaca | menyanyi | melompat | Kalimat yang benar adalah ‘Aku bisa mencuci piring sendiri.’
+
+== Bahasa Indonesia | 1 | Teman Baru
+%prompt Lawan kata ‘{0}’ adalah ...
+%explain Lawan kata ‘{0}’ adalah ‘{1}’.
+~ senang | sedih
+~ besar | kecil
+~ tinggi | rendah
+~ cepat | lambat
+~ panas | dingin
+~ siang | malam
+~ atas | bawah
+~ buka | tutup
+~ masuk | keluar
+~ datang | pergi
+~ baru | lama
+
+== Bahasa Indonesia | 1 | Aku Ingin
+Pilih penulisan kalimat yang benar tentang cita-cita Dimas. | Dimas ingin menjadi dokter. | dimas ingin menjadi dokter. | Dimas ingin menjadi Dokter. | Dimas ingin menjadi dokter | Nama orang dan awal kalimat ditulis dengan huruf kapital; kalimat ditutup titik.
+Pilih penulisan kalimat yang benar tentang cita-cita Sinta. | Sinta ingin menjadi guru. | sinta ingin menjadi guru. | Sinta ingin menjadi guru | Sinta Ingin Menjadi Guru. | Kalimat ‘Sinta ingin menjadi guru.’ ditulis dengan benar.
+Pilih penulisan kalimat yang benar tentang cita-cita Raka. | Raka ingin menjadi pilot. | raka ingin menjadi pilot. | Raka ingin menjadi pilot | Raka ingin Menjadi pilot. | Kalimat ‘Raka ingin menjadi pilot.’ ditulis dengan benar.
+Pilih penulisan kalimat yang benar tentang cita-cita Nisa. | Nisa ingin menjadi petani. | nisa ingin menjadi petani. | Nisa ingin menjadi petani | nisa Ingin menjadi petani. | Kalimat ‘Nisa ingin menjadi petani.’ ditulis dengan benar.
+Orang yang mengobati orang sakit disebut ... | dokter | pilot | koki | sopir | Dokter memeriksa dan mengobati orang sakit.
+Orang yang menerbangkan pesawat disebut ... | pilot | nelayan | petani | penjahit | Pilot mengemudikan pesawat terbang.
+Orang yang memasak di restoran disebut ... | koki | guru | polisi | tukang pos | Koki pandai memasak.
+Orang yang menangkap ikan di laut disebut ... | nelayan | pilot | dokter | pelukis | Nelayan berlayar untuk menangkap ikan.
+Kata ‘ingin’ artinya sama dengan ... | mau | takut | lupa | marah | ‘Aku ingin’ berarti ‘aku mau’.
+Agar keinginan tercapai, kita harus ... | rajin belajar | malas | tidur terus | bermain saja | Cita-cita dicapai dengan usaha dan belajar.
+
+== Bahasa Indonesia | 1 | Temanku Berbeda
+%prompt Kata yang artinya sama dengan ‘{0}’ adalah ...
+%explain ‘{0}’ artinya sama dengan ‘{1}’.
+~ gembira | senang
+~ pandai | pintar
+~ elok | indah
+~ lekas | cepat
+~ kawan | teman
+~ menolong | membantu
+~ bocah | anak
+~ sobat | sahabat
+~ berbeda | tidak sama
+~ rumah | tempat tinggal
+
+== Bahasa Indonesia | 1 | Di Sekitar Rumah
+Ruangan untuk memasak di rumah disebut ... | dapur | kamar tidur | teras | garasi | Di dapur, Ibu memasak makanan.
+Ruangan untuk tidur disebut ... | kamar tidur | dapur | kamar mandi | gudang | Kita beristirahat di kamar tidur.
+Ruangan untuk menerima tamu disebut ... | ruang tamu | dapur | gudang | kamar mandi | Tamu dipersilakan duduk di ruang tamu.
+Tempat menyimpan mobil atau motor disebut ... | garasi | dapur | kebun | kamar | Kendaraan disimpan di garasi.
+Bagian rumah di depan pintu tempat bersantai disebut ... | teras | atap | lantai | jendela | Teras berada di depan rumah.
+Orang yang rumahnya di sebelah rumah kita disebut ... | tetangga | saudara jauh | tamu | penjual | Kita harus rukun dengan tetangga.
+Tempat menanam bunga dan sayur di sekitar rumah disebut ... | kebun | dapur | lemari | atap | Kebun membuat rumah asri.
+Benda untuk menyapu lantai disebut ... | sapu | piring | sendok | bantal | Lantai bersih jika disapu.
+Benda tempat menyimpan pakaian disebut ... | lemari | kompor | meja makan | sumur | Pakaian rapi disimpan di lemari.
+Bagian rumah yang melindungi kita dari hujan disebut ... | atap | pintu | lantai | pagar | Atap berada di bagian paling atas rumah.
+
+== Bahasa Indonesia | 2 | Mengenal Perasaan
+Raka mendapat hadiah dari Ayah. Perasaan Raka adalah ... | senang | sedih | takut | marah | Mendapat hadiah membuat hati senang.
+Mainan Dina rusak. Perasaan Dina adalah ... | sedih | gembira | bangga | lucu | Kehilangan atau rusaknya barang membuat sedih.
+Bima mendengar petir yang keras. Perasaan Bima adalah ... | takut | senang | bangga | kenyang | Suara petir yang keras dapat membuat takut.
+Sari juara lomba menggambar. Perasaan Sari adalah ... | bangga | malu | takut | bosan | Berhasil meraih prestasi membuat bangga.
+Adik salah menyebut nama di depan kelas lalu wajahnya memerah. Adik merasa ... | malu | marah | lapar | bangga | Malu membuat wajah memerah.
+Kue Rani diambil tanpa izin. Perasaan Rani adalah ... | kesal | gembira | bangga | tenang | Diambil tanpa izin membuat kesal.
+Saat teman bersedih, kita sebaiknya ... | menghiburnya | menertawakannya | meninggalkannya | mengejeknya | Menghibur teman menunjukkan kepedulian.
+Ekspresi wajah tersenyum biasanya menunjukkan perasaan ... | senang | sedih | marah | takut | Senyum tanda hati senang.
+Kalimat yang tepat untuk menyampaikan rasa marah dengan baik adalah ... | Aku kesal karena mainanku diambil. | Pergi kamu! | Aku tidak mau bicara selamanya! | Kamu jahat sekali! | Perasaan disampaikan dengan kata-kata yang santun.
+Saat merasa takut, kita dapat ... | bercerita kepada orang tua | memendamnya sendiri | berteriak kepada teman | merusak barang | Bercerita membuat hati lebih tenang.
+
+== Bahasa Indonesia | 2 | Menjaga Kesehatan
+%prompt Penulisan kata baku dari ‘{0}’ adalah ...
+%explain Bentuk baku kata ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ telor | telur
+~ cabe | cabai
+~ nafas | napas
+~ kemaren | kemarin
+~ sop | sup
+~ olah raga | olahraga
+~ lobang | lubang
+~ rubuh | roboh
+Urutan mencuci tangan yang benar adalah ... | basahi tangan, pakai sabun, gosok, bilas, keringkan | pakai sabun, keringkan, basahi tangan | bilas, gosok, pakai sabun | keringkan, bilas, basahi tangan | Petunjuk dilakukan sesuai urutannya.
+Kata ‘bergizi’ artinya ... | mengandung zat yang baik untuk tubuh | berwarna-warni | terasa manis | harganya mahal | Makanan bergizi menyehatkan tubuh.
+
+== Bahasa Indonesia | 2 | Berhati-hati di Mana Saja
+Kalimat yang berisi perintah atau larangan disebut kalimat ... | perintah | tanya | berita | seru kagum | Contoh: ‘Jangan berlari di tangga!’
+‘Dilarang berenang di sungai.’ Kalimat ini termasuk ... | larangan | ajakan | pertanyaan | ucapan terima kasih | Kata ‘dilarang’ menunjukkan larangan.
+Kalimat perintah biasanya diakhiri tanda ... | seru (!) | tanya (?) | koma (,) | titik dua (:) | Tanda seru menegaskan perintah.
+Rambu bergambar orang menyeberang menunjukkan tempat ... | penyeberangan pejalan kaki | parkir mobil | bermain bola | berhenti bus | Rambu memberi petunjuk keselamatan.
+Saat lampu lalu lintas berwarna merah, kendaraan harus ... | berhenti | jalan cepat | belok sesukanya | membunyikan klakson | Merah berarti berhenti.
+Tulisan ‘Awas Lantai Licin’ meminta kita untuk ... | berhati-hati | berlari | melompat | bermain air | Kata ‘awas’ berarti berhati-hati.
+Pilih kalimat ajakan yang tepat. | Ayo, kita buang sampah di tempatnya! | Sampah itu bau. | Siapa yang membuang sampah? | Sampahnya banyak sekali. | Kata ‘ayo’ menandakan kalimat ajakan.
+Ketika ada orang asing mengajak pergi, kita harus ... | menolak dan memberi tahu orang tua | ikut saja | menerima hadiahnya | merahasiakannya | Keselamatan diri harus dijaga.
+Kata ‘waspada’ artinya ... | berhati-hati | bermain | bersenang-senang | tertidur | Waspada berarti selalu berhati-hati.
+Nomor telepon darurat polisi di Indonesia adalah ... | 110 | 113 | 118 | 911 | Nomor 110 untuk polisi, 113 untuk pemadam kebakaran.
+
+== Bahasa Indonesia | 2 | Keluargaku Unik
+%prompt Dalam keluarga, ‘{0}’ disebut ...
+%explain {0} disebut {1}.
+~ ayah dari ayah atau ibu | kakek
+~ ibu dari ayah atau ibu | nenek
+~ adik laki-laki ayah | paman
+~ adik perempuan ibu | bibi
+~ anak dari paman atau bibi | sepupu
+~ anak dari anak kita | cucu
+~ saudara yang lahir lebih dulu | kakak
+~ saudara yang lahir sesudah kita | adik
+~ dua anak yang lahir bersamaan | kembar
+~ ayah dan ibu | orang tua
+
+== Bahasa Indonesia | 2 | Berteman dalam Keragaman
+%prompt Sinonim kata ‘{0}’ adalah ...
+%explain Sinonim adalah persamaan kata: ‘{0}’ = ‘{1}’.
+~ rukun | damai
+~ ramah | murah senyum
+~ beragam | bermacam-macam
+~ menghargai | menghormati
+~ kompak | bersatu
+~ bersama | bareng
+~ cerdik | pintar
+~ rajin | tekun
+~ suku | bangsa daerah
+~ kawan sebangku | teman semeja
+
+== Bahasa Indonesia | 2 | Bijak Memakai Uang
+%prompt Kata tanya yang tepat untuk menanyakan {0} adalah ...
+%explain Kata tanya ‘{1}’ dipakai untuk menanyakan {0}.
+~ harga atau jumlah | berapa
+~ tempat | di mana
+~ waktu | kapan
+~ alasan | mengapa
+~ orang | siapa
+~ benda | apa
+~ cara | bagaimana
+Uang yang disisihkan untuk disimpan disebut ... | tabungan | utang | belanjaan | hadiah | Menabung membantu memenuhi kebutuhan nanti.
+Barang yang benar-benar diperlukan disebut ... | kebutuhan | keinginan | hiasan | hadiah | Kebutuhan didahulukan daripada keinginan.
+Celengan dipakai untuk ... | menabung | memasak | menulis | bermain bola | Uang dimasukkan ke celengan untuk ditabung.
+
+== Bahasa Indonesia | 2 | Sayang Lingkungan
+%prompt Lawan kata ‘{0}’ adalah ...
+%explain Antonim atau lawan kata ‘{0}’ adalah ‘{1}’.
+~ bersih | kotor
+~ subur | gersang
+~ sejuk | panas
+~ rimbun | gundul
+~ jernih | keruh
+~ harum | busuk
+~ merawat | merusak
+~ menanam | menebang
+~ hemat | boros
+~ basah | kering
+
+== Bahasa Indonesia | 2 | Hobi yang Jadi Prestasi
+%prompt Orang yang hobinya ‘{0}’ disebut ...
+%explain Orang yang hobinya {0} disebut {1}.
+~ melukis | pelukis
+~ menyanyi | penyanyi
+~ menari | penari
+~ menulis cerita | penulis
+~ berenang | perenang
+~ berlari | pelari
+~ memasak | juru masak
+~ membaca | pembaca
+~ bermain sepak bola | pemain sepak bola
+~ memotret | fotografer
+~ bersepeda | pesepeda
+
+== Bahasa Indonesia | 3 | Ayo, Main!
+%prompt Kata dasar ‘{0}’ jika diberi awalan me- menjadi ...
+%explain ‘{0}’ + me- = ‘{1}’.
+~ lompat | melompat
+~ lempar | melempar
+~ tendang | menendang
+~ pukul | memukul
+~ tangkap | menangkap
+~ sepak | menyepak
+~ sapu | menyapu
+~ kejar | mengejar
+~ dorong | mendorong
+~ gambar | menggambar
+~ tulis | menulis
+
+== Bahasa Indonesia | 3 | Kawan Seiring
+%prompt Sinonim kata ‘{0}’ adalah ...
+%explain ‘{0}’ bersinonim dengan ‘{1}’.
+~ seiring | sejalan
+~ setia | teguh hati
+~ akrab | dekat
+~ peduli | perhatian
+~ bertengkar | berselisih
+~ berdamai | berbaikan
+~ sabar | tenang
+~ ikhlas | tulus
+~ mengajak | membujuk ikut
+~ menyesal | merasa bersalah
+
+== Bahasa Indonesia | 3 | Pengobar Semangat
+Kalimat yang mengungkapkan perasaan kagum atau semangat disebut kalimat ... | seru | tanya | berita | perintah | Kalimat seru diakhiri tanda seru.
+Pilih kalimat seru yang tepat. | Wah, hebat sekali lompatanmu! | Lompatanmu sejauh dua meter. | Berapa jauh lompatanmu? | Lompatlah ke depan. | Kata ‘wah’ dan tanda seru menunjukkan kekaguman.
+Kata ‘pengobar semangat’ artinya orang yang ... | membangkitkan semangat | memadamkan api | membuat takut | melarang bermain | Mengobarkan semangat berarti membuat semangat menyala.
+‘Ayo, kamu pasti bisa!’ Kalimat ini bertujuan untuk ... | memberi semangat | melarang | bertanya | memberi tahu harga | Kalimat ini menyemangati teman.
+Tanda baca yang tepat untuk kalimat ‘Hore, kita menang’ adalah ... | tanda seru (!) | tanda tanya (?) | titik (.) | koma (,) | Kalimat seru diakhiri tanda seru.
+Kata seru yang menyatakan rasa senang adalah ... | hore | aduh | wah sayang | cih | ‘Hore’ diucapkan saat gembira.
+Kata seru yang menyatakan rasa sakit adalah ... | aduh | hore | asyik | horee | ‘Aduh’ diucapkan saat kesakitan.
+Pidato singkat untuk menyemangati teman sebaiknya disampaikan dengan suara ... | lantang dan jelas | berbisik | menangis | terputus-putus | Suara lantang membuat pesan mudah ditangkap.
+Lagu yang membangkitkan semangat perjuangan disebut lagu ... | mars | nina bobo | lagu sedih | lagu dolanan saja | Contohnya lagu ‘Maju Tak Gentar’.
+Kata ‘gigih’ artinya ... | pantang menyerah | mudah putus asa | pemalas | pemarah | Orang gigih terus berusaha.
+
+== Bahasa Indonesia | 3 | Senyum di Sekitarku
+%prompt Antonim kata ‘{0}’ adalah ...
+%explain Antonim ‘{0}’ adalah ‘{1}’.
+~ ramah | ketus
+~ tersenyum | cemberut
+~ dermawan | kikir
+~ jujur | bohong
+~ rajin | malas
+~ sopan | kasar
+~ berani | penakut
+~ ringan tangan | malas membantu
+~ pemaaf | pendendam
+~ rendah hati | sombong
+
+== Bahasa Indonesia | 3 | Bola-Bola Cokelat
+Teks yang berisi langkah-langkah membuat sesuatu disebut teks ... | prosedur | dongeng | puisi | berita | Resep makanan termasuk teks prosedur.
+Bagian resep yang berisi daftar bahan dan alat disebut ... | bahan dan alat | langkah-langkah | judul saja | penutup | Bahan dan alat disiapkan sebelum memasak.
+Kata ‘pertama’, ‘kemudian’, dan ‘terakhir’ dalam resep menunjukkan ... | urutan langkah | jumlah bahan | rasa makanan | warna makanan | Kata penanda urutan membuat langkah jelas.
+Kata kerja ‘bulatkan’ dalam resep berarti ... | membentuk menjadi bulat | memotong kecil | memanaskan | membuang | Adonan dibulatkan menjadi bola.
+Kata kerja ‘campurkan’ dalam resep berarti ... | menyatukan bahan | memisahkan bahan | membuang bahan | menyimpan bahan | Bahan diaduk menjadi satu.
+Kata ‘taburi’ dalam resep berarti ... | menaburkan sesuatu di atas makanan | merebus | menggoreng | memeras | Bola cokelat ditaburi meses.
+Jika langkah resep tidak berurutan, hasilnya bisa ... | tidak sesuai harapan | pasti lebih enak | lebih cepat matang | lebih banyak | Langkah harus diikuti sesuai urutan.
+Sebelum memasak, kita harus ... | mencuci tangan | bermain tanah | memegang hewan | menggaruk kepala | Kebersihan penting saat memasak.
+Alat untuk mengaduk adonan adalah ... | sendok atau spatula | gunting | pisau lipat | penggaris | Sendok atau spatula membantu mencampur adonan.
+Kata ‘secukupnya’ dalam resep berarti ... | sesuai kebutuhan | sebanyak-banyaknya | tidak memakai sama sekali | dua kilogram | Takaran ‘secukupnya’ disesuaikan dengan selera.
+
+== Bahasa Indonesia | 3 | Tersesat
+Jika tersesat di tempat ramai, sebaiknya kita ... | meminta tolong kepada petugas | ikut orang asing | pergi semakin jauh | menangis sambil berlari | Petugas dapat membantu menemukan orang tua.
+Kata ‘tersesat’ artinya ... | salah jalan dan tidak tahu arah | tertidur | terjatuh | tertawa | Tersesat berarti kehilangan arah.
+Kata keterangan tempat yang tepat: ‘Toko buku ada ... sebelah kanan masjid.’ | di | ke | dari | pada saat | ‘Di’ menunjukkan tempat berada.
+Kata yang tepat: ‘Kami berjalan ... pasar.’ (tujuan) | ke | di | dari | oleh | ‘Ke’ menunjukkan arah tujuan.
+Kata yang tepat: ‘Ayah baru pulang ... kantor.’ (asal) | dari | ke | di | untuk | ‘Dari’ menunjukkan asal.
+Penulisan kata depan ‘di’ yang benar adalah ... | di sekolah | disekolah | di-sekolah | dis ekolah | Kata depan ‘di’ ditulis terpisah dari kata tempat.
+Penulisan kata kerja berawalan di- yang benar adalah ... | dibaca | di baca | di-baca | dib aca | Awalan di- pada kata kerja ditulis serangkai.
+Informasi penting yang harus dihafal anak agar tidak tersesat adalah ... | alamat rumah dan nomor telepon orang tua | nama artis | warna mobil tetangga | nama hewan peliharaan teman | Alamat dan nomor telepon membantu petugas menghubungi keluarga.
+Petunjuk arah ‘belok kiri’ berarti kita berbelok ke arah ... | tangan kiri | tangan kanan | belakang | atas | Belok kiri sesuai arah tangan kiri.
+Gambar yang menunjukkan letak jalan dan tempat disebut ... | peta | foto keluarga | poster lagu | kalender | Peta membantu mencari jalan.
+
+== Bahasa Indonesia | 3 | Aku dan si Merah
+%prompt Bentuk baku dari kata ‘{0}’ adalah ...
+%explain Bentuk baku kata ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ apotik | apotek
+~ ijin | izin
+~ resiko | risiko
+~ aktifitas | aktivitas
+~ nasehat | nasihat
+~ praktek | praktik
+~ kwalitas | kualitas
+~ antri | antre
+~ sekedar | sekadar
+~ obyek | objek
+
+== Bahasa Indonesia | 3 | Sahabat dari Seberang
+Penulisan nama kota yang benar adalah ... | Pontianak | pontianak | PONtianak | pontiAnak | Nama tempat diawali huruf kapital.
+Penulisan nama pulau yang benar adalah ... | Pulau Sulawesi | pulau sulawesi | Pulau sulawesi | pulau Sulawesi | Nama geografi diawali huruf kapital.
+Penulisan nama suku yang benar adalah ... | suku Dayak | Suku dayak | suku dayak | SUKU dayak | Nama suku diawali huruf kapital, kata ‘suku’ tidak.
+Penulisan nama bahasa yang benar adalah ... | bahasa Jawa | Bahasa jawa | bahasa jawa | BAHASA jawa | Nama bahasa diawali huruf kapital.
+Penulisan nama hari yang benar adalah ... | Senin | senin | SEnin | seNin | Nama hari diawali huruf kapital.
+Penulisan nama bulan yang benar adalah ... | Agustus | agustus | agUstus | AgusTus | Nama bulan diawali huruf kapital.
+Kata ‘seberang’ artinya ... | sisi lain sungai, laut, atau jalan | tempat tidur | atap rumah | dalam kelas | Sahabat dari seberang tinggal di pulau lain.
+Surat untuk sahabat diawali dengan ... | salam pembuka | tanda tangan | salam penutup | alamat toko | Surat pribadi dimulai dengan salam pembuka.
+Bagian surat yang berisi pesan utama disebut ... | isi surat | salam penutup | tanggal | nama pengirim | Isi surat menyampaikan maksud penulis.
+Bahasa yang dipakai untuk berkomunikasi dengan sahabat dari daerah lain adalah ... | bahasa Indonesia | bahasa rahasia | bahasa isyarat saja | bahasa hewan | Bahasa Indonesia mempersatukan bangsa.
+
+== Bahasa Indonesia | 4 | Sudah Besar
+%prompt Kata dasar ‘{0}’ jika diberi awalan ber- menjadi ...
+%explain ‘{0}’ + ber- = ‘{1}’.
+~ main | bermain
+~ sepeda | bersepeda
+~ lari | berlari
+~ tugas | bertugas
+~ tanggung jawab | bertanggung jawab
+~ usaha | berusaha
+~ doa | berdoa
+~ ajar | belajar
+~ kerja | bekerja
+~ baju | berbaju
+
+== Bahasa Indonesia | 4 | Di Bawah Atap
+%prompt Penulisan baku dari ‘{0}’ adalah ...
+%explain Bentuk baku ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ jadual | jadwal
+~ karir | karier
+~ tehnik | teknik
+~ sistim | sistem
+~ hutang | utang
+~ merubah | mengubah
+~ jaman | zaman
+~ rejeki | rezeki
+~ silahkan | silakan
+~ rapih | rapi
+
+== Bahasa Indonesia | 4 | Lihat Sekitar
+%prompt Sinonim kata ‘{0}’ adalah ...
+%explain ‘{0}’ bersinonim dengan ‘{1}’.
+~ melihat | memandang
+~ mengamati | memperhatikan
+~ lingkungan | sekitar
+~ indah | permai
+~ luas | lebar
+~ pohon | tumbuhan berkayu
+~ jalan setapak | jalan kecil
+~ bising | ramai
+~ sunyi | sepi
+~ cerah | terang
+
+== Bahasa Indonesia | 4 | Meliuk dan Menerjang
+%prompt Antonim kata ‘{0}’ adalah ...
+%explain Antonim ‘{0}’ adalah ‘{1}’.
+~ meliuk | lurus
+~ menerjang | mundur
+~ lincah | kaku
+~ gesit | lamban
+~ kuat | lemah
+~ menang | kalah
+~ maju | mundur ke belakang
+~ naik | turun
+~ lawan | kawan
+~ awal | akhir
+
+== Bahasa Indonesia | 4 | Bertukar atau Membayar
+%prompt Arti kata ‘{0}’ adalah ...
+%explain ‘{0}’ artinya {1}.
+~ barter | tukar-menukar barang
+~ pembeli | orang yang membeli
+~ penjual | orang yang menjual
+~ harga | nilai barang dalam uang
+~ diskon | potongan harga
+~ kembalian | sisa uang pembayaran
+~ untung | hasil penjualan lebih dari modal
+~ rugi | hasil penjualan kurang dari modal
+~ modal | uang pokok untuk berdagang
+~ tawar-menawar | meminta harga turun
+
+== Bahasa Indonesia | 4 | Satu Titik
+Tanda baca titik (.) dipakai pada akhir kalimat ... | berita | tanya | seru | perintah keras | Kalimat berita diakhiri titik.
+Tanda koma (,) dipakai di antara ... | unsur-unsur dalam perincian | dua kalimat tanya | huruf kapital | angka ratusan saja | Contoh: Ibu membeli apel, jeruk, dan pisang.
+Tanda tanya (?) dipakai pada akhir kalimat ... | tanya | berita | perintah | seru | Contoh: Kapan kamu berangkat?
+Tanda titik dua (:) dipakai sebelum ... | rincian atau daftar | akhir kalimat | nama orang | kata seru | Contoh: Alat tulis: pensil, buku, penggaris.
+Tanda petik (“...”) dipakai untuk mengapit ... | kalimat langsung | nomor halaman | nama hari | angka | Contoh: Ibu berkata, “Ayo makan.”
+Penulisan kalimat yang benar adalah ... | Ibu membeli apel, jeruk, dan pisang. | Ibu membeli apel jeruk dan pisang | ibu membeli apel, jeruk, dan pisang. | Ibu membeli, apel jeruk, dan pisang | Perincian dipisah koma dan kalimat diakhiri titik.
+Penulisan kalimat langsung yang benar adalah ... | Ayah bertanya, “Sudah makan?” | Ayah bertanya “sudah makan?” | Ayah bertanya, sudah makan? | ayah bertanya, “Sudah makan?” | Kalimat langsung diawali koma dan diapit tanda petik.
+Tanda hubung (-) dipakai pada kata ... | ulang seperti anak-anak | akhir kalimat | singkatan nama | kalimat tanya | Kata ulang ditulis dengan tanda hubung.
+Singkatan ‘dll.’ adalah singkatan dari ... | dan lain-lain | dan lagi-lagi | dari luar lingkungan | dua lusin lebih | Singkatan umum diakhiri titik.
+Penulisan tanggal yang benar adalah ... | 17 Agustus 1945 | 17 agustus 1945 | 17 Agustus, 1945. | 17-agustus-1945 | Nama bulan diawali huruf kapital.
+
+== Bahasa Indonesia | 4 | Asal-Usul
+Cerita rakyat tentang asal-usul suatu tempat disebut ... | legenda | fabel | biografi | berita | Contohnya legenda Danau Toba.
+Cerita yang tokohnya hewan dan berperilaku seperti manusia disebut ... | fabel | legenda | mite | puisi | Contohnya Si Kancil dan Buaya.
+Cerita tentang dewa-dewi atau makhluk gaib disebut ... | mite | fabel | biografi | resep | Mite berisi kepercayaan masyarakat zaman dahulu.
+Pesan baik yang dapat diambil dari cerita disebut ... | amanat | tokoh | latar | judul | Amanat adalah nasihat dari cerita.
+Tempat dan waktu terjadinya cerita disebut ... | latar | amanat | alur | tokoh | Latar menjelaskan di mana dan kapan cerita terjadi.
+Pelaku dalam cerita disebut ... | tokoh | latar | amanat | judul | Tokoh dapat berupa manusia atau hewan.
+Urutan peristiwa dalam cerita disebut ... | alur | latar | tokoh | amanat | Alur terdiri atas awal, tengah, dan akhir.
+Legenda Malin Kundang mengajarkan kita agar ... | berbakti kepada ibu | pandai berdagang | cepat kaya | suka berlayar | Malin Kundang dikutuk karena durhaka.
+Cerita rakyat diwariskan secara turun-temurun terutama melalui ... | cerita lisan | surat kabar | internet | telepon | Dahulu cerita disampaikan dari mulut ke mulut.
+Kalimat pembuka yang sering dipakai dalam dongeng adalah ... | Pada zaman dahulu kala ... | Demikian berita hari ini. | Bahan-bahannya adalah ... | Dengan hormat, ... | Dongeng sering dibuka dengan ‘Pada zaman dahulu kala’.
+
+== Bahasa Indonesia | 4 | Sehatlah Ragaku
+%prompt Kata baku dari ‘{0}’ adalah ...
+%explain Bentuk baku ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ ambulan | ambulans
+~ cidera | cedera
+~ diagnosa | diagnosis
+~ lembab | lembap
+~ atlit | atlet
+~ jenasah | jenazah
+~ kaos | kaus
+~ mie | mi
+~ sayur mayur | sayur-mayur
+~ trampil | terampil
+
+== Bahasa Indonesia | 5 | Aku yang Unik
+%prompt Sinonim kata ‘{0}’ adalah ...
+%explain ‘{0}’ bersinonim dengan ‘{1}’.
+~ unik | khas
+~ bakat | talenta
+~ percaya diri | yakin akan kemampuan diri
+~ istimewa | luar biasa
+~ kelebihan | keunggulan
+~ kekurangan | kelemahan
+~ cita-cita | harapan masa depan
+~ tekun | rajin
+~ cerdas | pandai
+~ mandiri | tidak bergantung pada orang lain
+
+== Bahasa Indonesia | 5 | Buku Jendela Dunia
+Bagian buku yang memuat judul bab beserta nomor halamannya disebut ... | daftar isi | sampul | glosarium | indeks penulis | Daftar isi membantu mencari bab.
+Daftar kata sulit beserta artinya di bagian akhir buku disebut ... | glosarium | daftar isi | kata pengantar | sampul | Glosarium menjelaskan istilah.
+Ringkasan isi buku di sampul belakang disebut ... | sinopsis | judul | penerbit | daftar pustaka | Sinopsis membuat pembaca tertarik.
+Orang yang menulis buku disebut ... | penulis | penerbit | pembaca | ilustrator | Nama penulis tercantum di sampul.
+Orang yang membuat gambar dalam buku disebut ... | ilustrator | penulis | penerbit | penyunting | Ilustrasi memperjelas isi buku.
+Perusahaan yang mencetak dan menyebarkan buku disebut ... | penerbit | perpustakaan | toko alat tulis | percetakan uang | Penerbit menerbitkan buku.
+Ungkapan ‘buku adalah jendela dunia’ artinya ... | dengan membaca kita mengetahui banyak hal | buku berbentuk jendela | buku dipakai sebagai jendela | buku hanya untuk hiasan | Membaca membuka wawasan.
+Gagasan utama dalam sebuah paragraf disebut ... | ide pokok | kalimat penjelas | judul buku | kesimpulan bab | Ide pokok biasanya ada di kalimat utama.
+Kalimat yang menjelaskan ide pokok disebut kalimat ... | penjelas | utama | tanya | seru | Kalimat penjelas mendukung kalimat utama.
+Paragraf yang kalimat utamanya di awal disebut paragraf ... | deduktif | induktif | campuran | naratif | Deduktif: umum ke khusus.
+
+== Bahasa Indonesia | 5 | Ekspresi Diri melalui Hobi
+%prompt Bentuk baku dari ‘{0}’ adalah ...
+%explain Bentuk baku ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ kreatifitas | kreativitas
+~ analisa | analisis
+~ hakekat | hakikat
+~ ijasah | ijazah
+~ ekstrim | ekstrem
+~ handal | andal
+~ ketrampilan | keterampilan
+~ nomer | nomor
+~ respon | respons
+~ tauladan | teladan
+
+== Bahasa Indonesia | 5 | Belajar Berwirausaha
+%prompt Arti kata ‘{0}’ adalah ...
+%explain ‘{0}’ artinya {1}.
+~ wirausaha | orang yang mendirikan dan menjalankan usaha
+~ konsumen | pemakai barang atau jasa
+~ produsen | pembuat barang
+~ promosi | kegiatan memperkenalkan produk
+~ iklan | pesan yang mengajak orang membeli
+~ laba | keuntungan
+~ pelanggan | pembeli tetap
+~ kemasan | bungkus produk
+~ produk | barang hasil usaha
+~ omzet | jumlah hasil penjualan
+
+== Bahasa Indonesia | 5 | Menjadi Warga Dunia
+%prompt Padanan bahasa Indonesia untuk istilah ‘{0}’ adalah ...
+%explain Istilah ‘{0}’ dipadankan dengan ‘{1}’.
+~ online | daring
+~ offline | luring
+~ download | unduh
+~ upload | unggah
+~ email | surel
+~ password | kata sandi
+~ website | laman
+~ smartphone | ponsel pintar
+~ meeting | rapat
+~ feedback | umpan balik
+~ deadline | tenggat
+
+== Bahasa Indonesia | 5 | Cinta Indonesia
+Karangan yang bahasanya indah dan tersusun atas bait dan larik disebut ... | puisi | cerpen | berita | resep | Puisi mementingkan keindahan bahasa.
+Baris dalam puisi disebut ... | larik | bait | rima | paragraf | Larik adalah baris puisi.
+Kumpulan beberapa larik dalam puisi disebut ... | bait | rima | judul | majas | Satu bait terdiri atas beberapa larik.
+Persamaan bunyi di akhir larik disebut ... | rima | irama | bait | amanat | Rima membuat puisi enak didengar.
+Pantun terdiri atas sampiran dan ... | isi | judul | rima saja | paragraf | Dua baris awal sampiran, dua baris akhir isi.
+Rima pantun yang benar adalah ... | a-b-a-b | a-a-b-b | a-b-b-a | a-a-a-b | Pantun berima silang a-b-a-b.
+Jumlah baris dalam satu bait pantun biasa adalah ... | empat | dua | tiga | enam | Pantun terdiri atas empat baris.
+Penyair yang menulis puisi ‘Aku’ dan ‘Diponegoro’ adalah ... | Chairil Anwar | W.S. Rendra | Taufiq Ismail | Sapardi Djoko Damono | Chairil Anwar dikenal sebagai pelopor Angkatan ’45.
+Membaca puisi di depan orang banyak dengan ekspresi disebut ... | deklamasi | wawancara | diskusi | pidato | Deklamasi memperhatikan intonasi, ekspresi, dan gerak.
+Lagu ‘Tanah Airku’ diciptakan oleh ... | Ibu Sud | W.R. Supratman | Ismail Marzuki | C. Simanjuntak | Ibu Sud banyak menciptakan lagu anak-anak.
+
+== Bahasa Indonesia | 5 | Sayangi Bumi
+%prompt Antonim kata ‘{0}’ adalah ...
+%explain Antonim ‘{0}’ adalah ‘{1}’.
+~ melestarikan | memusnahkan
+~ tercemar | murni
+~ hemat energi | boros energi
+~ lestari | punah
+~ menghijaukan | menggunduli
+~ alami | buatan
+~ terbarukan | tak terbarukan
+~ banjir | kekeringan
+~ mengurangi | menambah
+~ peduli | acuh tak acuh
+
+== Bahasa Indonesia | 5 | Bergerak Bersama
+Kata penghubung yang tepat: ‘Aku ingin bermain, ... hujan turun deras.’ | tetapi | dan | karena | sehingga | ‘Tetapi’ menyatakan pertentangan.
+Kata penghubung yang tepat: ‘Rina rajin belajar ... nilainya baik.’ | sehingga | tetapi | atau | meskipun | ‘Sehingga’ menyatakan akibat.
+Kata penghubung yang tepat: ‘Andi tidak masuk sekolah ... sakit.’ | karena | sehingga | tetapi | atau | ‘Karena’ menyatakan sebab.
+Kata penghubung yang tepat: ‘Kamu mau teh ... susu?’ | atau | tetapi | karena | sehingga | ‘Atau’ menyatakan pilihan.
+Kata penghubung yang tepat: ‘... lelah, Ayah tetap bekerja.’ | Meskipun | Karena | Sehingga | Atau | ‘Meskipun’ menyatakan perlawanan.
+Kata penghubung yang tepat: ‘Kami membersihkan kelas ... halaman.’ | dan | tetapi | karena | meskipun | ‘Dan’ menyatakan penambahan.
+Kalimat ajakan untuk bergotong royong yang tepat adalah ... | Mari kita bersihkan selokan bersama-sama! | Selokan itu kotor. | Siapa yang membuang sampah? | Selokan dibersihkan kemarin. | Kata ‘mari’ menandakan ajakan.
+Kegiatan bertukar pendapat untuk mencari keputusan bersama disebut ... | musyawarah | perlombaan | pertengkaran | pengumuman | Musyawarah mengutamakan mufakat.
+Orang yang memimpin jalannya diskusi disebut ... | moderator | notulis | penonton | narasumber | Moderator mengatur giliran bicara.
+Orang yang mencatat hasil diskusi disebut ... | notulis | moderator | peserta pasif | penyiar | Notulis membuat catatan rapat.
+
+== Bahasa Indonesia | 6 | Bangga menjadi anak Indonesia
+%prompt Bentuk baku dari ‘{0}’ adalah ...
+%explain Bentuk baku ‘{0}’ adalah ‘{1}’.
+%cue-as-wrong
+~ propinsi | provinsi
+~ tradisionil | tradisional
+~ walikota | wali kota
+~ cinderamata | cendera mata
+~ kongkrit | konkret
+~ pondasi | fondasi
+~ standarisasi | standardisasi
+~ frekwensi | frekuensi
+~ gubug | gubuk
+~ Pebruari | Februari
+
+== Bahasa Indonesia | 6 | Musisi Indonesia di panggung dunia
+%prompt Arti istilah ‘{0}’ adalah ...
+%explain ‘{0}’ artinya {1}.
+~ musisi | orang yang ahli memainkan atau menciptakan musik
+~ komponis | pencipta lagu
+~ orkestra | kelompok besar pemain musik
+~ konser | pertunjukan musik
+~ vokalis | penyanyi dalam kelompok musik
+~ tempo | cepat lambatnya lagu
+~ notasi | tulisan nada lagu
+~ aransemen | penataan ulang lagu
+~ dirigen | pemimpin paduan suara atau orkestra
+~ biografi | riwayat hidup seseorang yang ditulis orang lain
+
+== Bahasa Indonesia | 6 | Taman Nasional dan situs warisan dunia
+Teks yang menjelaskan proses terjadinya suatu peristiwa disebut teks ... | eksplanasi | prosedur | puisi | pantun | Contohnya teks tentang terjadinya pelangi.
+Teks yang memaparkan informasi tentang suatu objek secara lengkap disebut teks ... | laporan atau informasi | dongeng | puisi | pantun | Teks informasi berisi fakta.
+Taman Nasional Komodo terletak di provinsi ... | Nusa Tenggara Timur | Bali | Papua | Jawa Timur | Taman Nasional Komodo menjadi habitat komodo.
+Taman Nasional Ujung Kulon terkenal sebagai habitat ... | badak Jawa | orang utan | komodo | gajah Sumatra | Ujung Kulon berada di Banten.
+Taman Nasional Tanjung Puting terkenal sebagai tempat pelestarian ... | orang utan | badak | komodo | jalak Bali | Tanjung Puting berada di Kalimantan Tengah.
+Candi Borobudur ditetapkan UNESCO sebagai ... | situs warisan dunia | taman nasional | kebun raya | museum modern | Borobudur diakui UNESCO sejak 1991.
+Lembaga PBB yang menetapkan situs warisan dunia adalah ... | UNESCO | UNICEF | WHO | FAO | UNESCO mengurus pendidikan, ilmu, dan budaya.
+Kata ‘konservasi’ artinya ... | pelestarian | perusakan | penjualan | perlombaan | Konservasi melindungi alam dan budaya.
+Kalimat yang berisi fakta adalah ... | Taman Nasional Komodo terletak di Nusa Tenggara Timur. | Komodo adalah hewan paling menyeramkan. | Tempat itu pasti paling indah di dunia. | Semua orang harus suka komodo. | Fakta dapat dibuktikan kebenarannya.
+Kalimat yang berisi opini adalah ... | Pemandangan di Raja Ampat sangat menakjubkan. | Raja Ampat terletak di Papua Barat Daya. | Borobudur berada di Magelang. | Komodo hidup di Pulau Komodo. | Opini adalah pendapat seseorang.
+
+== Bahasa Indonesia | 6 | Jeda untuk iklim
+Kalimat utama dalam paragraf berisi ... | gagasan pokok | contoh saja | rincian kecil | penutup cerita | Kalimat utama memuat ide pokok.
+Teks yang berisi pendapat penulis disertai alasan disebut teks ... | argumentasi | dongeng | resep | pantun | Teks argumentasi berusaha meyakinkan pembaca.
+Kata ‘jeda’ dalam judul ‘Jeda untuk Iklim’ artinya ... | berhenti sejenak | berlari cepat | membeli | membakar | Jeda berarti istirahat atau berhenti sebentar.
+Istilah ‘emisi’ dalam teks iklim artinya ... | gas buangan ke udara | air hujan | sinar bulan | tanah subur | Emisi kendaraan menyebabkan polusi.
+Istilah ‘pemanasan global’ artinya ... | meningkatnya suhu rata-rata bumi | turunnya salju di Indonesia | hilangnya matahari | bertambahnya hutan | Pemanasan global terkait perubahan iklim.
+Kalimat saran yang tepat untuk mengurangi perubahan iklim adalah ... | Sebaiknya kita bersepeda untuk jarak dekat. | Kita harus selalu naik mobil. | Lampu dinyalakan sepanjang hari. | Hutan boleh dibakar. | Kata ‘sebaiknya’ menandakan saran.
+Kata penghubung ‘oleh karena itu’ dipakai untuk menyatakan ... | kesimpulan atau akibat | pertentangan | pilihan | waktu | Contoh: Bumi makin panas. Oleh karena itu, kita perlu menanam pohon.
+Kata ‘aksi’ dalam ‘aksi iklim’ artinya ... | tindakan | mimpi | lagu | lukisan | Aksi iklim adalah tindakan untuk menjaga bumi.
+Ringkasan yang baik berisi ... | pokok-pokok penting teks | semua kalimat teks | pendapat yang tidak ada di teks | judul saja | Ringkasan memuat inti bacaan dengan singkat.
+Kata ‘dampak’ artinya ... | akibat | sebab | judul | saran | Dampak adalah akibat dari suatu peristiwa.

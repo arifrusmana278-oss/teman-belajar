@@ -13,6 +13,8 @@ final class CurriculumCatalog {
 
   private CurriculumCatalog() {}
 
+  static List<Seed> seeds() { return SEEDS; }
+
   static void seed(SubjectRepository subjects, LessonRepository lessons) {
     Set<String> activeTitles = new HashSet<>();
     for (Seed seed : SEEDS) {
@@ -128,7 +130,31 @@ final class CurriculumCatalog {
       {"Mengembangkan karya seni rupa", "Bermain musik secara berkelompok", "Gerak dan pola lantai tari", "Teater: tokoh dan cerita"},
       {"Apresiasi dan pameran karya rupa", "Mencipta musik sederhana", "Kreasi tari kelompok", "Pementasan dan refleksi karya"}
     });
+    // Madrasah subjects and Sejarah Indonesia keep their chapter list next to their questions in resources/question-bank.
+    for (String subject : List.of("Fiqih", "Akidah Akhlak", "Sejarah Kebudayaan Islam", "Sejarah Indonesia")) {
+      java.util.Map<Integer, Integer> numbers = new java.util.HashMap<>();
+      for (FactBank.Chapter chapter : FactBank.chaptersOf(subject)) {
+        int number = numbers.merge(chapter.grade(), 1, Integer::sum);
+        result.add(new Seed(subject, chapter.grade(), "Bab " + number + " — " + chapter.title(), bankMaterial(subject, chapter)));
+      }
+    }
     return List.copyOf(result);
+  }
+
+  private static String bankMaterial(String subject, FactBank.Chapter chapter) {
+    boolean history = subject.startsWith("Sejarah");
+    String objectives = history
+        ? "Setelah belajar, siswa dapat menceritakan peristiwa penting secara runtut, menyebut tokoh dan tempatnya, serta mengambil teladan dari peristiwa tersebut."
+        : "Setelah belajar, siswa dapat menjelaskan pokok materi, menyebut contoh penerapannya, dan membiasakan sikap yang sesuai dalam kehidupan sehari-hari.";
+    String example = history
+        ? "Contoh: buat garis waktu sederhana berisi tiga peristiwa dari bab “" + chapter.title() + "”, lalu tulis satu hal yang dapat kamu teladani."
+        : "Contoh: tuliskan satu kebiasaan dari bab “" + chapter.title() + "” yang akan kamu lakukan hari ini, lalu ceritakan kepada orang tua atau guru.";
+    String practice = history
+        ? "Latihan mandiri: tanyakan kepada keluarga atau cari di buku sekolah satu cerita lain tentang “" + chapter.title() + "”, lalu ceritakan kembali dengan kalimatmu sendiri."
+        : "Latihan mandiri: pelajari bacaan dan tata caranya dari buku madrasah dan bimbingan guru, lalu praktikkan dengan tertib.";
+    return "TUJUAN BELAJAR\n" + objectives + "\n\nMATERI INTI\n" + chapter.material() + "\n\nCONTOH TERBIMBING\n" + example
+        + "\n\nLATIHAN MANDIRI\n" + practice
+        + "\n\nRANGKUMAN\nMateri ini merupakan uraian belajar orisinal; gunakan buku pegangan madrasah/sekolah dan arahan guru untuk rincian yang mengikuti edisi sekolah.";
   }
 
   private static String key(String subject, String grade, String title) {
@@ -315,7 +341,8 @@ final class CurriculumCatalog {
       }
       default -> {
         objectives = "Siswa dapat memahami pokok bahasan dan menerapkannya dalam latihan sederhana.";
-        concept = "Pelajari konsep “" + chapter + "” secara bertahap. Hubungkan istilah baru dengan contoh yang dekat dengan pengalaman sehari-hari, lalu periksa kembali pemahaman dengan menjelaskan menggunakan kata-kata sendiri.";
+        String written = FactBank.materialOf(subject, grade, chapter);
+        concept = !written.isEmpty() ? written : "Pelajari konsep “" + chapter + "” secara bertahap. Hubungkan istilah baru dengan contoh yang dekat dengan pengalaman sehari-hari, lalu periksa kembali pemahaman dengan menjelaskan menggunakan kata-kata sendiri.";
         workedExample = "Contoh: buat peta konsep kecil berisi topik, tiga gagasan penting, dan satu contoh penerapan.";
         practice = "Latihan mandiri: jelaskan satu hal baru yang dipahami tentang “" + chapter + "” kepada teman atau keluarga.";
       }

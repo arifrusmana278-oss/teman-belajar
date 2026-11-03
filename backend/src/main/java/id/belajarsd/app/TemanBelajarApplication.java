@@ -23,7 +23,7 @@ public class TemanBelajarApplication {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**").allowedOrigins(origins.split(","))
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS").allowedHeaders("Content-Type", "Authorization");
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS").allowedHeaders("Content-Type", "Authorization").exposedHeaders("X-Questions-Exhausted");
       }
     };
   }
@@ -39,7 +39,7 @@ public class TemanBelajarApplication {
   }
 
   @Bean
-  CommandLineRunner seedData(SubjectRepository subjects, LessonRepository lessons, QuestionRepository questions) {
+  CommandLineRunner seedData(SubjectRepository subjects, LessonRepository lessons, MathQuestionSync mathQuestions, SeedQuestionSync seedQuestions) {
     return args -> {
       Object[][] data = {
             {"Matematika", "🔢", "Berlatih angka dan logika", "#dff3ff", 1},
@@ -52,7 +52,11 @@ public class TemanBelajarApplication {
             {"Mathematics in English", "🧩", "Learn math in English", "#e3e8ff", 8},
             {"Pendidikan Pancasila", "🇮🇩", "Belajar nilai Pancasila dan kehidupan berbangsa", "#ffe3dd", 9},
             {"PJOK", "🏃", "Bergerak aktif, sehat, dan aman", "#dcf5ff", 10},
-            {"Seni", "🎨", "Bereksplorasi melalui seni rupa, musik, tari, dan teater", "#f4e2ff", 11}
+            {"Seni", "🎨", "Bereksplorasi melalui seni rupa, musik, tari, dan teater", "#f4e2ff", 11},
+            {"Fiqih", "🤲", "Tata cara ibadah dan muamalah sehari-hari", "#e2f6ea", 12},
+            {"Akidah Akhlak", "💚", "Iman kepada Allah dan akhlak terpuji", "#fdf0d5", 13},
+            {"Sejarah Kebudayaan Islam", "🕋", "Kisah Nabi, sahabat, dan dakwah Islam", "#efe6d8", 14},
+            {"Sejarah Indonesia", "📜", "Jejak perjalanan bangsa Indonesia", "#fbe4d6", 15}
       };
       for (Object[] item : data) {
         if (subjects.findByName((String) item[0]).isEmpty()) {
@@ -77,18 +81,12 @@ public class TemanBelajarApplication {
       createLesson(subjects, lessons, "Mathematics in English", "Addition facts", "Grade 1",
             "Addition combines groups. Count on to find the total.");
       CurriculumCatalog.seed(subjects, lessons);
-      // Backfill existing databases too; only add missing questions, so restarts are safe.
+      // Keep every chapter's starter questions equal to its bank; unchanged banks are left as they are, so restarts are safe.
       for (Lesson lesson : lessons.findAllWithSubject()) {
+        if (mathQuestions.sync(lesson)) continue;
         var bank = QuestionBank.forLesson(lesson.getTitle());
         if (bank.isEmpty()) bank = CurriculumQuestionBank.forLesson(lesson);
-        int existing = questions.findByLessonIdOrderByIdAsc(lesson.getId()).size();
-        var missing = new java.util.ArrayList<Question>();
-        for (int i = existing; i < bank.size(); i++) {
-          QuestionBank.Item item = bank.get(i);
-          missing.add(new Question(lesson, item.prompt(), String.join("|||", item.options()),
-              item.correctOptionIndex(), item.explanation()));
-        }
-        questions.saveAll(missing);
+        seedQuestions.sync(lesson, bank);
       }
     };
   }

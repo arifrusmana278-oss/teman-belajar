@@ -56,3 +56,28 @@
 .club-teaser{display:flex;align-items:center;gap:13px;margin:0 0 34px;padding:15px 18px;border:1px solid #e8e0f4;border-radius:14px;background:linear-gradient(110deg,#fbf7ff,#f5f8ff)}.club-teaser>span{font-size:27px}.club-teaser>div{flex:1;min-width:0}.club-teaser b,.club-teaser small{display:block}.club-teaser b{color:#4b4767;font-size:13px}.club-teaser small{margin-top:4px;color:#7d7a91;font-size:10px;line-height:1.5}.club-teaser button{border:0;border-radius:9px;background:#ede7fa;color:#69539a;padding:10px 12px;font-size:10px;font-weight:900;white-space:nowrap}@media(max-width:560px){.club-teaser{align-items:flex-start;flex-wrap:wrap;padding:13px}.club-teaser>div{flex-basis:calc(100% - 48px)}.club-teaser button{margin-left:40px}}
 .option span[dir="rtl"]{flex:1;text-align:right;unicode-bidi:isolate}
 .arabic-option span[dir="rtl"]{font-size:24px;font-weight:400;line-height:1.8}
+.method-tabs{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.method-tab{min-height:40px;padding:8px 14px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+.method-tab.active{background:#2f5f8a;border-color:#2f5f8a;color:#fff}
+.feedback .method-title{margin-top:10px;font-weight:700}
+.feedback .method-steps{margin-top:10px;font-size:14px;color:#2b3440;white-space:pre-line}
+.essay-form{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.essay-badge{align-self:flex-start;padding:3px 10px;border-radius:999px;background:#e9e2ff;color:#4a3a8c;font-size:12px;font-weight:700}
+.essay-form label{font-size:13px;font-weight:700;color:#2b3440}
+.essay-form textarea,.essay-form input{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #cfd6e0;border-radius:11px;background:#fff;color:#2b3440;font:inherit;font-size:16px}
+.essay-form textarea{resize:vertical;line-height:1.5}
+.essay-form textarea:disabled,.essay-form input:disabled{background:#f4f6f9;color:#2b3440}
+.essay-form small{color:#5c6775;line-height:1.5}
+.essay-answer-space{min-height:150px}
+.answer-locked{margin-top:15px;padding:13px 15px;border-radius:11px;background:#f4f6f9;color:#2b3440}
+.answer-locked p{margin:0 0 10px;font-size:13px;line-height:1.5}
+.option.right,.option.right.chosen{border-color:#2f9e5b;background:#e6f7ec;color:#1f6b3d}
+.option.right .option-letter,.option.right.chosen .option-letter{background:#2f9e5b;color:#fff}
+.option.wrong,.option.wrong.chosen{border-color:#d93f3f;background:#fde8e8;color:#a61b1b}
+.option.wrong .option-letter,.option.wrong.chosen .option-letter{background:#d93f3f;color:#fff}
+.question-chip.review-right,.question-chip.review-right.current{border-color:#2f9e5b;background:#e6f7ec;color:#1f6b3d}
+.question-chip.review-wrong,.question-chip.review-wrong.current{border-color:#d93f3f;background:#fde8e8;color:#a61b1b}
+.question-chip.review-right.current{outline-color:#2f9e5b}
+.question-chip.review-wrong.current{outline-color:#d93f3f}
+.essay-form input.answer-right:disabled{border-color:#2f9e5b;background:#e6f7ec;color:#1f6b3d}
+.essay-form input.answer-wrong:disabled{border-color:#d93f3f;background:#fde8e8;color:#a61b1b}

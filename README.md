@@ -1,6 +1,6 @@
 # Teman Belajar SD — MVP
 
-Platform belajar web untuk siswa SD kelas 1–6 Indonesia. MVP ini menyediakan dashboard siswa, 8 jalur mata pelajaran, materi contoh, kuis pilihan ganda, pembahasan jawaban, dan riwayat progres.
+Platform belajar web untuk siswa SD kelas 1–6 Indonesia. MVP ini menyediakan dashboard siswa, 15 mata pelajaran (termasuk Fiqih, Akidah Akhlak, Sejarah Kebudayaan Islam, dan Sejarah Indonesia), materi contoh, kuis pilihan ganda, pembahasan jawaban, dan riwayat progres.
 
 ## Teknologi
 - Frontend: Vue 3, JavaScript, Vite
@@ -52,7 +52,7 @@ Email memerlukan konfigurasi SMTP di `.env`. Untuk Gmail, gunakan `MAIL_HOST=smt
 
 Fitur soal AI nonaktif secara default. Untuk mengaktifkannya, isi `AI_BASE_URL`, `AI_MODEL`, dan `AI_API_KEY` di `.env`, lalu set `AI_QUESTIONS_ENABLED=true` dan mulai ulang backend. Key hanya dibaca backend dan jangan dimasukkan ke frontend atau source control. Endpoint harus kompatibel dengan format Chat Completions OpenAI. Backend memeriksa format dan duplikasi sebelum menyimpan tepat 12 soal per bab (dapat diubah melalui `AI_QUESTIONS_PER_LESSON`).
 
-Backend menjalankan pembaruan setiap **hari Minggu pukul 23:59 WIB** (`Asia/Jakarta`), dengan batas maksimum `AI_QUESTIONS_BATCH_SIZE` bab per putaran. Jika kredensial belum lengkap, putaran dilewati tanpa menghubungi provider. Jika provider gagal atau hasilnya tidak valid, putaran dihentikan dan dicoba kembali pada jadwal Minggu berikutnya; bank yang ada tetap dipakai. Batch AI berlaku 30 hari, lalu dibersihkan setiap hari pukul 02:15 waktu server. Soal awal dipertahankan hingga penggantinya tersedia; bila tidak ada soal aktif karena layanan AI gagal, bank awal tetap menjadi cadangan. Siswa berbagi bank soal per bab, dan setiap sesi mengacak 10 soal. Admin dapat melihat konfigurasi nonrahasia dan status ringkas melalui `GET /api/admin/ai-questions`.
+Backend menjalankan pembaruan setiap **hari Minggu pukul 23:59 WIB** (`Asia/Jakarta`), dengan batas maksimum `AI_QUESTIONS_BATCH_SIZE` bab per putaran. Jika kredensial belum lengkap, putaran dilewati tanpa menghubungi provider. Jika provider gagal atau hasilnya tidak valid, putaran dihentikan dan dicoba kembali pada jadwal Minggu berikutnya; bank yang ada tetap dipakai. Batch AI berlaku 30 hari, lalu dibersihkan setiap hari pukul 02:15 waktu server. Soal awal dipertahankan hingga penggantinya tersedia; bila tidak ada soal aktif karena layanan AI gagal, bank awal tetap menjadi cadangan. Siswa berbagi bank soal per bab, dan setiap sesi mengacak 10 soal. Soal yang sudah dilihat siswa pada hari yang sama (WIB) tidak muncul lagi di mata pelajaran itu; lihat QUESTION_SOURCES.md. Admin dapat melihat konfigurasi nonrahasia dan status ringkas melalui `GET /api/admin/ai-questions`.
 
 Jika SMTP belum diatur atau gagal mengirim, unggahan tetap tersimpan sebagai menunggu persetujuan dan dashboard admin akan menampilkan bahwa email belum terkirim. Atur SMTP, lalu unggah QR kembali untuk memicu permintaan persetujuan baru.
 
@@ -91,12 +91,12 @@ npm run dev
 | Method | Endpoint | Keterangan |
 |---|---|---|
 | GET | `/api/health` | Health check aplikasi |
-| GET | `/api/subjects` | Daftar 8 mata pelajaran |
+| GET | `/api/subjects` | Daftar mata pelajaran yang memiliki bab untuk kelas siswa |
 | POST | `/api/auth/register` | Daftar akun siswa dan kelas |
 | POST | `/api/auth/login` | Login siswa atau admin |
 | GET | `/api/subjects/{id}/lessons` | Materi untuk mata pelajaran |
 | GET | `/api/lessons/{id}` | Detail materi |
-| GET | `/api/lessons/{id}/questions` | Soal tanpa kunci jawaban |
+| GET | `/api/lessons/{id}/questions` | Soal satu sesi tanpa kunci jawaban; header `X-Questions-Exhausted` bernilai `today`/`partial` bila soal baru hari ini habis/tinggal sedikit |
 | POST | `/api/lessons/{id}/check` | Periksa jawaban dan kembalikan pembahasan |
 | POST | `/api/progress` | Simpan hasil latihan |
 | GET | `/api/progress?studentName=Adik` | Ringkasan dan riwayat progres |

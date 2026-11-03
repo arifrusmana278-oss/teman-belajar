@@ -13,6 +13,12 @@ public interface QuestionRepository extends JpaRepository<Question,Long> {
   List<Question> findByLessonIdOrderByIdAsc(Long lessonId);
   Optional<Question> findByIdAndLessonId(Long id, Long lessonId);
 
+  @Query("select q from Question q where q.id in :ids and q.lesson.subject.id = :subjectId")
+  List<Question> findByIdInAndSubjectId(@Param("ids") java.util.Collection<Long> ids, @Param("subjectId") Long subjectId);
+
+  @Query("select q from Question q where q.lesson.id = :lessonId and (q.source = 'SEED' or q.source is null) order by q.id")
+  List<Question> findSeedByLessonId(@Param("lessonId") Long lessonId);
+
   @Query("select q from Question q where q.lesson.id = :lessonId and "
       + "(q.expiresAt is null or q.expiresAt > :now) order by q.id")
   List<Question> findActiveByLessonId(@Param("lessonId") Long lessonId, @Param("now") Instant now);
